@@ -1,0 +1,58 @@
+import { WhatsappButton } from "./WhatsappButton";
+import { bagWeight, formatIronOnlyPrice, formatPrice, pricing } from "@/lib/prices";
+
+export function Pricing() {
+  return (
+    <section className="section section--purple" id="precos" aria-labelledby="precos-title">
+      <div className="container">
+        <h2 id="precos-title" className="section__title">
+          Preços e serviços
+        </h2>
+
+        <div className="launch-banner">
+          <span className="badge launch-banner__tag">Oferta de Lançamento</span>
+          <p className="launch-banner__text">
+            1ª lavagem — lavar + secar, saco de {bagWeight}, por{" "}
+            <strong className="highlight">{formatPrice(pricing.launch)}</strong>
+          </p>
+        </div>
+
+        <div className="pricing-grid">
+          <div className="price-card">
+            <h3 className="price-card__title">Lavar + Secar</h3>
+            <p className="price-card__price">{formatPrice(pricing.washDry)}</p>
+            <p className="price-card__desc">Saco de {bagWeight}</p>
+            <ul className="price-card__list">
+              <li>Lavada, seca e dobrada</li>
+              <li>Recolha + entrega incluídas</li>
+            </ul>
+          </div>
+
+          <div className="price-card price-card--popular">
+            <span className="price-card__badge">Mais popular</span>
+            <h3 className="price-card__title">Lavar + Secar + Passar a Ferro</h3>
+            <p className="price-card__price">{formatPrice(pricing.washDryIron)}</p>
+            <p className="price-card__desc">Saco de {bagWeight}</p>
+            <ul className="price-card__list">
+              <li>Pronta a vestir e a arrumar</li>
+              <li>Recolha + entrega incluídas</li>
+            </ul>
+          </div>
+
+          <div className="price-card">
+            <h3 className="price-card__title">Só Passar a Ferro</h3>
+            <p className="price-card__price">{formatIronOnlyPrice()}</p>
+            <p className="price-card__desc">Trazes lavada, devolvemos engomada</p>
+            <ul className="price-card__list">
+              <li>Recolha + entrega incluídas</li>
+            </ul>
+          </div>
+        </div>
+
+        <WhatsappButton location="pricing" className="btn btn--primary btn--large">
+          Pedir Agora 🧺
+        </WhatsappButton>
+      </div>
+    </section>
+  );
+}
