@@ -18,7 +18,7 @@ export function Footer() {
           </li>
           <li>
             <a href="https://www.facebook.com/lavameisso" target="_blank" rel="noopener">
-              Facebook
+              Facebook @lavameisso
             </a>
           </li>
         </ul>

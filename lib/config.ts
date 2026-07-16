@@ -12,5 +12,5 @@ export const site = {
   url: "https://lavameisso.pt",
   title: "Lavandaria com recolha e entrega ao domicílio | Santarém e Cartaxo | lava-me isso.",
   description:
-    "Lavandaria em Santarém e Cartaxo com recolha e entrega ao domicílio em 48h. Manda uma mensagem no WhatsApp e nós tratamos da tua roupa — lavada, seca e dobrada.",
+    "Lavandaria em Santarém e Cartaxo com recolha e entrega ao domicílio em 72h. Manda uma mensagem no WhatsApp e nós tratamos da tua roupa — lavada, seca e dobrada.",
 };

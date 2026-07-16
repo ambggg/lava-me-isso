@@ -14,7 +14,7 @@ const steps = [
   {
     number: 3,
     emoji: "🧺",
-    title: "Devolvemos em 48h",
+    title: "Devolvemos em 72h",
     text: "Lavada, seca e dobrada.",
   },
 ];

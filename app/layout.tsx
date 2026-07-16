@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_PT",
     title: "lava-me isso. — Lavandaria com recolha e entrega em Santarém e Cartaxo",
-    description: "A tua roupa lavada, seca e dobrada, sem saíres de casa. Recolhemos e entregamos em 48h.",
+    description: "A tua roupa lavada, seca e dobrada, sem saíres de casa. Recolhemos e entregamos em 72h.",
     url: site.url,
     images: ["/og-image.jpg"],
   },

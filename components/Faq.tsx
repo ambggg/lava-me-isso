@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Qual é o prazo de entrega?",
-    answer: "48h a contar da recolha. Muitas vezes é mais rápido.",
+    answer: "72h a contar da recolha. Muitas vezes é mais rápido.",
   },
   {
     question: "Como posso pagar?",

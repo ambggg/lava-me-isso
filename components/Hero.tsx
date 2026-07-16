@@ -12,7 +12,7 @@ export function Hero() {
         <WhatsappButton location="hero" className="btn btn--primary btn--large">
           Agendar Recolha 🧺
         </WhatsappButton>
-        <p className="hero__note">Entregamos em 48h · Sem compromisso</p>
+        <p className="hero__note">Entregamos em 72h · Sem compromisso</p>
       </div>
     </header>
   );
