@@ -15,8 +15,8 @@ export function SiteHeader() {
             ← Para Particulares
           </Link>
         ) : (
-          <Link href="/empresas" className="site-nav__link">
-            Para Empresas →
+          <Link href="/empresas" className="site-nav__link site-nav__link--highlight">
+            🏢 Para Empresas
           </Link>
         )}
       </div>
