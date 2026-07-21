@@ -27,3 +27,16 @@ export function trackWhatsAppB2BClick(location: string) {
     window.gtag("event", "cta_whatsapp_b2b", { location });
   }
 }
+
+// Genérico para páginas de SEO local (localidades, engomadoria) — cada uma
+// passa o seu próprio nome de evento, para atribuição de canal em separado.
+export function trackWhatsAppCustomClick(event: string, location: string) {
+  if (typeof window === "undefined") return;
+
+  if (typeof window.plausible === "function") {
+    window.plausible(event, { props: { location } });
+  }
+  if (typeof window.gtag === "function") {
+    window.gtag("event", event, { location });
+  }
+}

@@ -575,6 +575,16 @@ img {
   margin: 0 0 8px;
 }
 
+.footer__zones a {
+  color: var(--neon-yellow);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer__zones a:hover {
+  text-decoration: underline;
+}
+
 .footer__copy {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
@@ -676,6 +686,110 @@ img {
   margin: 16px 0 0;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Páginas de localidade / engomadoria ---------- */
+.location-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.location-content__paragraph {
+  margin: 0 0 16px;
+  color: var(--text-soft);
+}
+
+.location-content__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.location-areas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-areas li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--violeta);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Blog /dicas (preparado, ainda não publicado) ---------- */
+.article-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.article-content h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--violeta);
+  margin: 32px 0 12px;
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content p {
+  margin: 0 0 16px;
+  color: var(--text-soft);
+}
+
+.article-meta {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.article-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  text-decoration: none;
+}
+
+.article-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--violeta);
+  margin: 0 0 8px;
+}
+
+.article-card__excerpt {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.article-empty {
+  text-align: center;
+  color: var(--text-soft);
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 /* ---------- Botão flutuante WhatsApp ---------- */

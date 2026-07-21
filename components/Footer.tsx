@@ -23,10 +23,22 @@ export function Footer() {
             </a>
           </li>
           <li>
+            <Link href="/lavandaria-santarem">Lavandaria em Santarém</Link>
+          </li>
+          <li>
+            <Link href="/lavandaria-cartaxo">Lavandaria no Cartaxo</Link>
+          </li>
+          <li>
+            <Link href="/engomadoria">Engomadoria</Link>
+          </li>
+          <li>
             <Link href="/empresas">Para Empresas</Link>
           </li>
         </ul>
-        <p className="footer__zones">Zonas servidas: Santarém · Cartaxo</p>
+        <p className="footer__zones">
+          Zonas servidas: <Link href="/lavandaria-santarem">Santarém</Link> ·{" "}
+          <Link href="/lavandaria-cartaxo">Cartaxo</Link>
+        </p>
         <p className="footer__copy">&copy; 2026 lava-me isso.</p>
       </div>
     </footer>

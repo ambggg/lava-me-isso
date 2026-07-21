@@ -13,6 +13,7 @@ export const pricing = {
   launch: "15€" as PriceValue, // Oferta de lançamento (1ª lavagem, 2 sacos de 7kg)
   washDryIron: "29€" as PriceValue, // Cartão 2 — Lavar + Secar + Passar a Ferro (kit completo)
   ironOnly: "27€" as PriceValue, // Cartão 3 — Só Passar a Ferro
+  ironShirt: "3€" as PriceValue, // Página /engomadoria — camisa avulsa, com cabide incluído
 };
 
 const PLACEHOLDER = "Brevemente";
