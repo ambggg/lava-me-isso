@@ -1,5 +1,5 @@
 import { WhatsappButton } from "./WhatsappButton";
-import { bagWeight, formatIronOnlyPrice, formatPrice, pricing } from "@/lib/prices";
+import { bagWeight, formatPrice, pricing } from "@/lib/prices";
 
 export function Pricing() {
   return (
@@ -12,7 +12,7 @@ export function Pricing() {
         <div className="launch-banner">
           <span className="badge launch-banner__tag">Oferta de Lançamento</span>
           <p className="launch-banner__text">
-            1ª lavagem — lavar + secar, saco de {bagWeight}, por{" "}
+            1ª lavagem — lavar + secar, 2 sacos de {bagWeight}, por{" "}
             <strong className="highlight">{formatPrice(pricing.launch)}</strong>
           </p>
         </div>
@@ -41,7 +41,7 @@ export function Pricing() {
 
           <div className="price-card">
             <h3 className="price-card__title">Só Passar a Ferro</h3>
-            <p className="price-card__price">{formatIronOnlyPrice()}</p>
+            <p className="price-card__price">{formatPrice(pricing.ironOnly)}</p>
             <p className="price-card__desc">Trazes lavada, devolvemos engomada</p>
             <ul className="price-card__list">
               <li>Recolha + entrega incluídas</li>

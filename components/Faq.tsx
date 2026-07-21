@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "O que cabe num saco de 7kg?",
     answer:
-      "Cerca de 25 a 30 peças — t-shirts, calças, camisolas, roupa interior, toalhas. Dá para a roupa suja de uma semana.",
+      "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior, toalhas. Dá para a roupa suja de uma semana.",
   },
   {
     question: "Fazem cuidados especiais (delicados, cores separadas)?",
