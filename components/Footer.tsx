@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -20,6 +21,9 @@ export function Footer() {
             <a href="https://www.facebook.com/lavameisso" target="_blank" rel="noopener">
               Facebook @lavameisso
             </a>
+          </li>
+          <li>
+            <Link href="/empresas">Para Empresas</Link>
           </li>
         </ul>
         <p className="footer__zones">Zonas servidas: Santarém · Cartaxo</p>

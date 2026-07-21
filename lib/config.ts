@@ -7,6 +7,16 @@ export const whatsappLink = `https://wa.me/${whatsapp.number}?text=${encodeURICo
   whatsapp.message
 )}`;
 
+// Mensagem própria para a página /empresas — permite distinguir o canal B2B do B2C.
+export const whatsappB2B = {
+  number: "351910675457",
+  message: "Olá! Tenho um negócio e quero uma proposta B2B 🧺",
+};
+
+export const whatsappB2BLink = `https://wa.me/${whatsappB2B.number}?text=${encodeURIComponent(
+  whatsappB2B.message
+)}`;
+
 export const site = {
   name: "lava-me isso.",
   url: "https://lavameisso.pt",

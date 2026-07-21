@@ -4,6 +4,7 @@ import { Pricing } from "@/components/Pricing";
 import { Trust } from "@/components/Trust";
 import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
+import { WhatsappFloat } from "@/components/WhatsappFloat";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Faq />
         <FinalCta />
       </main>
+      <WhatsappFloat />
     </>
   );
 }

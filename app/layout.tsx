@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
-import { WhatsappFloat } from "@/components/WhatsappFloat";
+import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/config";
 
 const poppins = Poppins({
@@ -87,9 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         */}
 
+        <SiteHeader />
         {children}
         <Footer />
-        <WhatsappFloat />
       </body>
     </html>
   );

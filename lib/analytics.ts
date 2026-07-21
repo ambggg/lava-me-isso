@@ -15,3 +15,15 @@ export function trackWhatsAppClick(location: string) {
     window.gtag("event", "whatsapp_click", { location });
   }
 }
+
+// Evento distinto do B2C, para medir a conversão da página /empresas em separado.
+export function trackWhatsAppB2BClick(location: string) {
+  if (typeof window === "undefined") return;
+
+  if (typeof window.plausible === "function") {
+    window.plausible("cta_whatsapp_b2b", { props: { location } });
+  }
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "cta_whatsapp_b2b", { location });
+  }
+}
