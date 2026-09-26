@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     description:
       "Recolhas regulares, prazos garantidos e faturação mensal para alojamento local, restauração e empresas.",
     url: "https://lavameisso.pt/empresas",
-    images: ["/og-image.jpg"],
   },
 };
 

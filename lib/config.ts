@@ -28,6 +28,24 @@ export const whatsappCartaxoLink = buildWhatsappLink(
   "Olá! Vi a página do Cartaxo e quero agendar uma recolha 🧺"
 );
 
+export const whatsappAzambujaLink = buildWhatsappLink(
+  "Olá! Vi a página da Azambuja e quero agendar uma recolha 🧺"
+);
+
+export const whatsappOrienteLink = buildWhatsappLink(
+  "Olá! Vi a página de Lisboa Oriente e quero agendar uma recolha 🧺"
+);
+
+// Saco Casa (lençóis e toalhas) — mensagem própria para medir o interesse no novo saco.
+export const whatsappSacoCasaLink = buildWhatsappLink(
+  "Olá! Quero experimentar o Saco Casa, para lençóis e toalhas 🧺"
+);
+
+// Secção de mensagens de clientes — mede quantos pedidos nascem da prova social.
+export const whatsappReviewsLink = buildWhatsappLink(
+  "Olá! Vi as mensagens dos vossos clientes no site e quero experimentar 🧺"
+);
+
 export const whatsappEngomadoriaLink = buildWhatsappLink(
   "Olá! Quero saber mais sobre a engomadoria 🧺"
 );
@@ -38,13 +56,13 @@ export const nap = {
   name: "lava-me isso.",
   telephone: "+351910675457",
   telephoneDisplay: "910 675 457",
-  areas: ["Santarém", "Cartaxo"],
+  areas: ["Santarém", "Cartaxo", "Azambuja", "Lisboa Oriente"],
 };
 
 export const site = {
   name: "lava-me isso.",
   url: "https://lavameisso.pt",
-  title: "Lavandaria com recolha e entrega ao domicílio | Santarém e Cartaxo | lava-me isso.",
+  title: "Lavandaria ao domicílio em Santarém e Lisboa Oriente | lava-me isso.",
   description:
-    "Lavandaria em Santarém e Cartaxo com recolha e entrega ao domicílio em 72h. Manda uma mensagem no WhatsApp e nós tratamos da tua roupa — lavada, seca e dobrada.",
+    "Lavandaria com recolha e entrega ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente. Roupa, lençóis e toalhas desde 15€. Pede no WhatsApp.",
 };

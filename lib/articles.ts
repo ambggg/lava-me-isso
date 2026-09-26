@@ -93,7 +93,7 @@ const quantoCustaLavarUmEdredao: Article = {
     },
     {
       type: "paragraph",
-      text: "Se o teu edredão já passou dos tempos em que a máquina de casa dava conta do recado — ou nunca deu, sejamos sinceros — não precisas de o levar a lado nenhum. Manda-nos mensagem, combinamos a recolha em Santarém ou no Cartaxo, e devolvemos-to lavado a sério, seco por completo e pronto para a cama, em 72 horas.",
+      text: "Se o teu edredão já passou dos tempos em que a máquina de casa dava conta do recado — ou nunca deu, sejamos sinceros — não precisas de o levar a lado nenhum. Manda-nos mensagem, combinamos a recolha em Santarém ou no Cartaxo, e devolvemos-to lavado a sério, seco por completo e pronto para a cama.",
     },
   ],
 };

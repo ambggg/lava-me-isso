@@ -17,22 +17,15 @@ export const metadata: Metadata = {
   title: site.title,
   description: site.description,
   robots: "index, follow",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    title: "lava-me isso. — Lavandaria com recolha e entrega em Santarém e Cartaxo",
-    description: "A tua roupa lavada, seca e dobrada, sem saíres de casa. Recolhemos e entregamos em 72h.",
+    title: "lava-me isso. — Lavandaria com recolha e entrega em Santarém, Cartaxo, Azambuja e Lisboa Oriente",
+    description: "A tua roupa lavada, seca e dobrada, sem saíres de casa. Recolhemos e entregamos à tua porta.",
     url: site.url,
-    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-  },
-  icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%BA%3C/text%3E%3C/svg%3E",
   },
 };
 
@@ -43,34 +36,10 @@ export const viewport: Viewport = {
   themeColor: "#EDE0FF",
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "DryCleaningOrLaundry",
-  name: "lava-me isso.",
-  description: "Lavandaria digital com recolha e entrega ao domicílio em Santarém e Cartaxo.",
-  url: "https://lavameisso.pt/",
-  telephone: "+351910675457",
-  priceRange: "€€",
-  areaServed: [
-    { "@type": "City", name: "Santarém" },
-    { "@type": "City", name: "Cartaxo" },
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Santarém",
-    addressRegion: "Santarém",
-    addressCountry: "PT",
-  },
-  sameAs: ["https://www.instagram.com/lavameisso", "https://www.facebook.com/lavameisso"],
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-PT" className={poppins.variable}>
       <body>
-        {/* Schema.org LocalBusiness */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
         {/* Plausible Analytics — substitui "lavameisso.pt" pelo teu domínio e descomenta */}
         {/* <Script defer data-domain="lavameisso.pt" src="https://plausible.io/js/script.js" /> */}
 

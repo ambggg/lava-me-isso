@@ -21,7 +21,7 @@ export function EngomadoriaHero() {
         >
           Pedir Engomadoria 🧺
         </WhatsappCustomButton>
-        <p className="hero__note">Entregamos em 72h · Recolha e entrega incluídas</p>
+        <p className="hero__note">Recolha e entrega incluídas</p>
       </div>
     </header>
   );
