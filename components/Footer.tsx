@@ -29,6 +29,12 @@ export function Footer() {
             <Link href="/lavandaria-cartaxo">Lavandaria no Cartaxo</Link>
           </li>
           <li>
+            <Link href="/lavandaria-azambuja">Lavandaria na Azambuja</Link>
+          </li>
+          <li>
+            <Link href="/lavandaria-lisboa-oriente">Lavandaria em Lisboa Oriente</Link>
+          </li>
+          <li>
             <Link href="/engomadoria">Engomadoria</Link>
           </li>
           <li>
@@ -37,7 +43,9 @@ export function Footer() {
         </ul>
         <p className="footer__zones">
           Zonas servidas: <Link href="/lavandaria-santarem">Santarém</Link> ·{" "}
-          <Link href="/lavandaria-cartaxo">Cartaxo</Link>
+          <Link href="/lavandaria-cartaxo">Cartaxo</Link> ·{" "}
+          <Link href="/lavandaria-azambuja">Azambuja</Link> ·{" "}
+          <Link href="/lavandaria-lisboa-oriente">Lisboa Oriente</Link>
         </p>
         <p className="footer__copy">&copy; 2026 lava-me isso.</p>
       </div>

@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     title: "Engomadoria com recolha em Santarém e Cartaxo — lava-me isso.",
     description: "Camisas a 3€, cabide incluído. Recolhemos, engomamos e entregamos à tua porta.",
     url: PAGE_URL,
-    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

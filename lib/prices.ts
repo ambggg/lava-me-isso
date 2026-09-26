@@ -14,7 +14,11 @@ export const pricing = {
   washDryIron: "29€" as PriceValue, // Cartão 2 — Lavar + Secar + Passar a Ferro (kit completo)
   ironOnly: "27€" as PriceValue, // Cartão 3 — Só Passar a Ferro
   ironShirt: "3€" as PriceValue, // Página /engomadoria — camisa avulsa, com cabide incluído
+  sacoCasa: null as PriceValue, // Saco Casa — lençóis e toalhas (lavar + secar + dobrar)
 };
+
+// Capacidade do Saco Casa — null esconde a linha até estar definida (ex.: "7kg").
+export const sacoCasaWeight: string | null = null;
 
 const PLACEHOLDER = "Brevemente";
 

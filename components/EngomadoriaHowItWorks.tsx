@@ -12,7 +12,7 @@ const steps = [
   {
     number: 3,
     title: "Entregamos prontas",
-    text: "De volta em 72h, prontas a vestir ou a arrumar.",
+    text: "De volta à tua porta, prontas a vestir ou a arrumar.",
   },
 ];
 

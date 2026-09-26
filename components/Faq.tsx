@@ -4,8 +4,10 @@ import { buildFaqPageSchema } from "@/lib/schema";
 const faqs = [
   {
     question: "A que zonas fazem entregas?",
-    answer: "Santarém, Cartaxo e freguesias próximas. Manda a morada no WhatsApp e confirmamos na hora.",
-    schemaAnswer: "Santarém, Cartaxo e freguesias próximas. Manda a morada no WhatsApp e confirmamos na hora.",
+    answer:
+      "Santarém, Cartaxo, Azambuja e Lisboa Oriente (Parque das Nações, Olivais, Moscavide, Portela e Sacavém). Manda a morada no WhatsApp e confirmamos na hora.",
+    schemaAnswer:
+      "Santarém, Cartaxo, Azambuja e Lisboa Oriente (Parque das Nações, Olivais, Moscavide, Portela e Sacavém). Manda a morada no WhatsApp e confirmamos na hora.",
   },
   {
     question: "Qual a diferença entre os serviços?",
@@ -21,9 +23,9 @@ const faqs = [
       "Lavar + Secar: roupa limpa, seca e dobrada. Lavar + Secar + Ferro: também sai pronta a vestir e arrumar. Só Ferro: já tens a roupa lavada, só falta passar.",
   },
   {
-    question: "Qual é o prazo de entrega?",
-    answer: "72h a contar da recolha. Muitas vezes é mais rápido.",
-    schemaAnswer: "72h a contar da recolha. Muitas vezes é mais rápido.",
+    question: "Quando recebo a roupa de volta?",
+    answer: "Combinamos a data de entrega contigo logo quando marcamos a recolha.",
+    schemaAnswer: "Combinamos a data de entrega contigo logo quando marcamos a recolha.",
   },
   {
     question: "Como posso pagar?",
@@ -33,9 +35,16 @@ const faqs = [
   {
     question: "O que cabe num saco de 7kg?",
     answer:
-      "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior, toalhas. Dá para a roupa suja de uma semana.",
+      "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior. Dá para a roupa suja de uma semana.",
     schemaAnswer:
-      "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior, toalhas. Dá para a roupa suja de uma semana.",
+      "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior. Dá para a roupa suja de uma semana.",
+  },
+  {
+    question: "Posso pôr lençóis e toalhas no saco da roupa?",
+    answer:
+      "Melhor não. Lençóis e toalhas vão no Saco Casa, que é lavado à parte — assim a tua roupa do dia-a-dia não se mistura com os têxteis da casa.",
+    schemaAnswer:
+      "Melhor não. Lençóis e toalhas vão no Saco Casa, que é lavado à parte — assim a tua roupa do dia-a-dia não se mistura com os têxteis da casa.",
   },
   {
     question: "Fazem cuidados especiais (delicados, cores separadas)?",

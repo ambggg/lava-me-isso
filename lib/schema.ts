@@ -24,6 +24,8 @@ export function buildLocalBusinessSchema({
     name: nap.name,
     description,
     url,
+    logo: `${site.url}/logo.png`,
+    image: `${site.url}/logo.png`,
     telephone: nap.telephone,
     priceRange: "€€",
     areaServed: areaServed.map((name) => ({ "@type": "City", name })),

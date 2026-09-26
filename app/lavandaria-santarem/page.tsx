@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     title: santarem.ogTitle,
     description: santarem.ogDescription,
     url: "https://lavameisso.pt/lavandaria-santarem",
-    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     title: cartaxo.ogTitle,
     description: cartaxo.ogDescription,
     url: "https://lavameisso.pt/lavandaria-cartaxo",
-    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

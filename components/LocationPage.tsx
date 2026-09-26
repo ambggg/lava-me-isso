@@ -36,7 +36,7 @@ export function LocationPage({ data }: { data: LocationData }) {
             Agendar Recolha 🧺
           </WhatsappCustomButton>
           <p className="hero__note">
-            Entregamos em 72h · Saco de {bagWeight} por {formatPrice(pricing.washDry)}
+            Recolha e entrega incluídas · Saco de {bagWeight} por {formatPrice(pricing.washDry)}
           </p>
         </div>
       </header>
