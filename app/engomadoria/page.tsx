@@ -15,7 +15,7 @@ const PAGE_URL = "https://lavameisso.pt/engomadoria";
 export const metadata: Metadata = {
   title: "Passar a Ferro em Santarém e Cartaxo | lava-me isso.",
   description:
-    "Passamos a ferro em Santarém e Cartaxo, com recolha ao domicílio. Camisa a partir de 3€, com cabide incluído. Pede no WhatsApp.",
+    "Passamos a ferro em Santarém e Cartaxo, com recolha ao domicílio. Camisa a partir de 3€ + IVA, com cabide incluído. Pede no WhatsApp.",
   alternates: {
     canonical: "/engomadoria",
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_PT",
     title: "Engomadoria com recolha em Santarém e Cartaxo — lava-me isso.",
-    description: "Camisas a 3€, cabide incluído. Recolhemos, engomamos e entregamos à tua porta.",
+    description: "Camisas a 3€ + IVA, cabide incluído. Recolhemos, engomamos e entregamos à tua porta.",
     url: PAGE_URL,
   },
   twitter: {

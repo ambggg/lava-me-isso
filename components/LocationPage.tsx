@@ -4,7 +4,7 @@ import { WhatsappCustomButton } from "./WhatsappCustomButton";
 import { FaqList } from "./FaqList";
 import { JsonLd } from "./JsonLd";
 import { buildFaqPageSchema, buildLocalBusinessSchema } from "@/lib/schema";
-import { bagWeight, formatPrice, pricing } from "@/lib/prices";
+import { bagWeight, formatPrice, MONTHLY_VAT_OFFER, pricing, VAT_SHORT } from "@/lib/prices";
 import { site } from "@/lib/config";
 import type { LocationData } from "@/lib/locations";
 
@@ -36,7 +36,7 @@ export function LocationPage({ data }: { data: LocationData }) {
             Agendar Recolha 🧺
           </WhatsappCustomButton>
           <p className="hero__note">
-            Recolha e entrega incluídas · Saco de {bagWeight} por {formatPrice(pricing.washDry)}
+            Recolha e entrega incluídas · Saco de {bagWeight} por {formatPrice(pricing.washDry)} {VAT_SHORT}
           </p>
         </div>
       </header>
@@ -92,12 +92,12 @@ export function LocationPage({ data }: { data: LocationData }) {
             </h2>
             <div className="launch-banner">
               <p className="launch-banner__text">
-                Saco de {bagWeight} — <strong className="highlight">{formatPrice(pricing.washDry)}</strong>, com
+                Saco de {bagWeight} — <strong className="highlight">{formatPrice(pricing.washDry)} {VAT_SHORT}</strong>, com
                 recolha e entrega incluídas
               </p>
             </div>
             <p className="pricing-note">
-              Também fazemos passar a ferro — vê os <Link href="/engomadoria">preços de engomadoria</Link>, ou
+              {MONTHLY_VAT_OFFER} Também fazemos passar a ferro — vê os <Link href="/engomadoria">preços de engomadoria</Link>, ou
               consulta a <Link href="/#precos">lista completa de preços e serviços</Link>.
             </p>
             <WhatsappCustomButton

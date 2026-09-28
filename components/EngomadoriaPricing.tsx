@@ -1,6 +1,6 @@
 import { WhatsappCustomButton } from "./WhatsappCustomButton";
 import { whatsappEngomadoriaLink } from "@/lib/config";
-import { bagWeight, formatPrice, pricing } from "@/lib/prices";
+import { bagWeight, formatPrice, MONTHLY_VAT_OFFER, pricing, VAT_NOTE } from "@/lib/prices";
 
 export function EngomadoriaPricing() {
   return (
@@ -14,6 +14,7 @@ export function EngomadoriaPricing() {
           <div className="price-card">
             <h3 className="price-card__title">Camisa Avulsa</h3>
             <p className="price-card__price">{formatPrice(pricing.ironShirt)}</p>
+            <p className="price-card__vat">{VAT_NOTE}</p>
             <p className="price-card__desc">Por peça</p>
             <ul className="price-card__list">
               <li>Cabide incluído</li>
@@ -35,6 +36,7 @@ export function EngomadoriaPricing() {
             <span className="price-card__badge">Mais popular</span>
             <h3 className="price-card__title">Pack Completo</h3>
             <p className="price-card__price">{formatPrice(pricing.washDryIron)}</p>
+            <p className="price-card__vat">{VAT_NOTE}</p>
             <p className="price-card__desc">Lavar + secar + passar, saco de {bagWeight}</p>
             <ul className="price-card__list">
               <li>Pronta a vestir e a arrumar</li>
@@ -42,6 +44,8 @@ export function EngomadoriaPricing() {
             </ul>
           </div>
         </div>
+
+        <p className="pricing-note pricing-note--spaced">{MONTHLY_VAT_OFFER}</p>
 
         <WhatsappCustomButton
           href={whatsappEngomadoriaLink}

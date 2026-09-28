@@ -16,7 +16,7 @@ export function EngomadoriaIntro() {
           tudo pronto a vestir ou a arrumar, sem vincos nem stress.
         </p>
         <p className="location-content__paragraph">
-          Cobramos por peça, começando nos 3€ por camisa — já com cabide incluído, para ires
+          Cobramos por peça, começando nos 3€ + IVA por camisa — já com cabide incluído, para ires
           direto do saco para o armário. Se preferires simplificar, também temos o pack completo
           (lavar + secar + passar a ferro), pensado para quem quer despachar a roupa suja de uma
           só vez.

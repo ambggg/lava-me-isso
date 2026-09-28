@@ -3,7 +3,7 @@ import { FaqList } from "./FaqList";
 export const engomadoriaFaqs = [
   {
     question: "Quanto custa passar uma camisa a ferro?",
-    answer: "3€ por camisa, já com cabide incluído — perfeita para pendurar direto no armário.",
+    answer: "3€ + IVA por camisa, já com cabide incluído — perfeita para pendurar direto no armário.",
   },
   {
     question: "Só fazem camisas ou também outras peças?",
@@ -11,7 +11,7 @@ export const engomadoriaFaqs = [
   },
   {
     question: "Têm um pacote que inclua lavar, secar e passar?",
-    answer: "Sim — o pack completo (lavar + secar + passar a ferro) custa 29€ por saco de 7kg, com recolha e entrega incluídas.",
+    answer: "Sim — o pack completo (lavar + secar + passar a ferro) custa 29€ + IVA por saco de 7kg, com recolha e entrega incluídas.",
   },
   {
     question: "Preciso de trazer a roupa já lavada?",

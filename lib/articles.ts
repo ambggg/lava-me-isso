@@ -57,7 +57,7 @@ const quantoCustaLavarUmEdredao: Article = {
     },
     {
       type: "paragraph",
-      text: "Um edredão de casal cabe confortavelmente num saco de 7kg quando pesado seco — o nosso preço de 15€ por saco (recolha e entrega incluídas) aplica-se na mesma. Se tiveres um edredão maior (super king, ou com enchimento extra grosso de inverno), pode ocupar mais do que um saco. Nesse caso, é só avisares-nos no WhatsApp com as medidas ou o peso aproximado, e dizemos-te logo se precisas de um saco extra.",
+      text: "Um edredão de casal cabe confortavelmente num saco de 7kg quando pesado seco — o nosso preço de 15€ + IVA por saco (recolha e entrega incluídas) aplica-se na mesma. Se tiveres um edredão maior (super king, ou com enchimento extra grosso de inverno), pode ocupar mais do que um saco. Nesse caso, é só avisares-nos no WhatsApp com as medidas ou o peso aproximado, e dizemos-te logo se precisas de um saco extra.",
     },
     {
       type: "paragraph",

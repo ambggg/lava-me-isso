@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
+import { CookieConsent } from "@/components/CookieConsent";
 import { site } from "@/lib/config";
 
 const poppins = Poppins({
@@ -40,25 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-PT" className={poppins.variable}>
       <body>
-        {/* Plausible Analytics — substitui "lavameisso.pt" pelo teu domínio e descomenta */}
-        {/* <Script defer data-domain="lavameisso.pt" src="https://plausible.io/js/script.js" /> */}
-
-        {/* Google Analytics 4 — substitui G-XXXXXXX pelo teu Measurement ID e descomenta */}
-        {/*
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX" />
-        <Script id="ga4-init">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXX');
-          `}
-        </Script>
-        */}
-
         <SiteHeader />
         {children}
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

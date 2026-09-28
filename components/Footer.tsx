@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { CookieSettingsButton } from "./CookieConsent";
 
 export function Footer() {
   return (
@@ -46,6 +47,9 @@ export function Footer() {
           <Link href="/lavandaria-cartaxo">Cartaxo</Link> ·{" "}
           <Link href="/lavandaria-azambuja">Azambuja</Link> ·{" "}
           <Link href="/lavandaria-lisboa-oriente">Lisboa Oriente</Link>
+        </p>
+        <p className="footer__legal">
+          <Link href="/privacidade">Política de privacidade</Link> · <CookieSettingsButton />
         </p>
         <p className="footer__copy">&copy; 2026 lava-me isso.</p>
       </div>

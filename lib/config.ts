@@ -64,5 +64,5 @@ export const site = {
   url: "https://lavameisso.pt",
   title: "Lavandaria ao domicílio em Santarém e Lisboa Oriente | lava-me isso.",
   description:
-    "Lavandaria com recolha e entrega ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente. Roupa, lençóis e toalhas desde 15€. Pede no WhatsApp.",
+    "Lavandaria com recolha e entrega ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente. Roupa, lençóis e toalhas desde 15€ + IVA. Pede no WhatsApp.",
 };

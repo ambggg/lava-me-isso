@@ -453,6 +453,12 @@ img {
   background: var(--neon-yellow);
   color: var(--violeta);
   white-space: nowrap;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--radius-badge);
 }
 
 .price-card__title {
@@ -469,6 +475,14 @@ img {
   color: var(--violeta);
   margin: 0;
   line-height: 1;
+}
+
+.price-card__vat {
+  margin: 6px 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
 }
 
 .price-card__desc {
@@ -1622,4 +1636,99 @@ img {
   .reviews__sticker {
     animation: none;
   }
+}
+
+/* ---------- Banner de cookies ---------- */
+.consent {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 200;
+  display: flex;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+.consent__inner {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 440px;
+  background: var(--white);
+  color: var(--violeta);
+  border: 2px solid var(--lilas-suave);
+  border-radius: var(--radius-card);
+  box-shadow: 0 18px 40px rgba(26, 0, 64, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consent__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.consent__text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.consent__text a {
+  color: var(--lilas-deep);
+  font-weight: 600;
+}
+
+.consent__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .consent {
+    left: 24px;
+    right: auto;
+    bottom: 24px;
+  }
+}
+
+/* Botão "Preferências de cookies" com aspeto de link */
+.footer__cookie-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__legal {
+  font-size: 0.85rem;
+  margin: 0 0 8px;
+}
+
+.footer__legal a,
+.footer__legal .footer__cookie-btn {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.article-content .footer__cookie-btn {
+  color: var(--lilas-deep);
+}
+
+.pricing-note--spaced {
+  margin-bottom: 24px;
+}
+
+.section .container > .pricing-note + .btn--large {
+  margin-top: 24px;
 }

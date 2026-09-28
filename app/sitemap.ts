@@ -44,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${site.url}/privacidade`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
       url: `${site.url}/engomadoria`,
       lastModified,
       changeFrequency: "monthly",

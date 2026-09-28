@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { WhatsappButton } from "./WhatsappButton";
 import { WhatsappCustomButton } from "./WhatsappCustomButton";
 import { whatsappSacoCasaLink } from "@/lib/config";
-import { bagWeight, formatPrice, pricing, sacoCasaWeight } from "@/lib/prices";
+import { bagWeight, formatPrice, pricing, sacoCasaWeight, VAT_SHORT } from "@/lib/prices";
 
 type BagArtProps = {
   body: string;
@@ -67,7 +67,7 @@ export function Bags() {
                 <li>Pijamas e roupa de desporto</li>
               </ul>
               <p className="bag__meta">
-                Saco de {bagWeight} · <strong>desde {formatPrice(pricing.washDry)}</strong>
+                Saco de {bagWeight} · <strong>desde {formatPrice(pricing.washDry)} {VAT_SHORT}</strong>
               </p>
               <WhatsappButton location="bag-roupa" className="btn btn--outline btn--small">
                 Pedir o Saco Roupa
@@ -97,7 +97,7 @@ export function Bags() {
                 <p className="bag__meta">
                   {sacoCasaWeight ? <>Saco de {sacoCasaWeight}</> : null}
                   {sacoCasaWeight && pricing.sacoCasa ? " · " : null}
-                  {pricing.sacoCasa ? <strong>{pricing.sacoCasa}</strong> : null}
+                  {pricing.sacoCasa ? <strong>{pricing.sacoCasa} {VAT_SHORT}</strong> : null}
                 </p>
               ) : null}
               <WhatsappCustomButton

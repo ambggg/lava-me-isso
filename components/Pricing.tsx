@@ -1,5 +1,5 @@
 import { WhatsappButton } from "./WhatsappButton";
-import { bagWeight, formatPrice, pricing } from "@/lib/prices";
+import { bagWeight, formatPrice, pricing, VAT_NOTE } from "@/lib/prices";
 
 export function Pricing() {
   return (
@@ -10,10 +10,9 @@ export function Pricing() {
         </h2>
 
         <div className="launch-banner">
-          <span className="badge launch-banner__tag">Oferta de Lançamento</span>
+          <span className="badge launch-banner__tag">Clientes mensais</span>
           <p className="launch-banner__text">
-            1ª lavagem — lavar + secar, 2 sacos de {bagWeight}, por{" "}
-            <strong className="highlight">{formatPrice(pricing.launch)}</strong>
+            <strong className="highlight">Oferecemos o IVA</strong> a clientes com recolha todos os meses.
           </p>
         </div>
 
@@ -21,6 +20,7 @@ export function Pricing() {
           <div className="price-card">
             <h3 className="price-card__title">Lavar + Secar</h3>
             <p className="price-card__price">{formatPrice(pricing.washDry)}</p>
+            <p className="price-card__vat">{VAT_NOTE}</p>
             <p className="price-card__desc">Saco de {bagWeight}</p>
             <ul className="price-card__list">
               <li>Lavada, seca e dobrada</li>
@@ -32,6 +32,7 @@ export function Pricing() {
             <span className="price-card__badge">Mais popular</span>
             <h3 className="price-card__title">Lavar + Secar + Passar a Ferro</h3>
             <p className="price-card__price">{formatPrice(pricing.washDryIron)}</p>
+            <p className="price-card__vat">{VAT_NOTE}</p>
             <p className="price-card__desc">Saco de {bagWeight}</p>
             <ul className="price-card__list">
               <li>Pronta a vestir e a arrumar</li>
@@ -42,6 +43,7 @@ export function Pricing() {
           <div className="price-card">
             <h3 className="price-card__title">Só Passar a Ferro</h3>
             <p className="price-card__price">{formatPrice(pricing.ironOnly)}</p>
+            <p className="price-card__vat">{VAT_NOTE}</p>
             <p className="price-card__desc">Trazes lavada, devolvemos engomada</p>
             <ul className="price-card__list">
               <li>Recolha + entrega incluídas</li>
