@@ -1,12 +1,12 @@
 import { WhatsappButton } from "./WhatsappButton";
 import { bagWeight, formatPrice, pricing, VAT_NOTE } from "@/lib/prices";
 
-export function Pricing() {
+export function Pricing({ title = "Preços e serviços" }: { title?: string }) {
   return (
     <section className="section section--purple" id="precos" aria-labelledby="precos-title">
       <div className="container">
         <h2 id="precos-title" className="section__title">
-          Preços e serviços
+          {title}
         </h2>
 
         <div className="launch-banner">

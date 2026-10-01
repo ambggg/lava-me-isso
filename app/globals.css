@@ -1732,3 +1732,741 @@ img {
 .section .container > .pricing-note + .btn--large {
   margin-top: 24px;
 }
+
+/* ============================================
+   Páginas de localidade (v2)
+   ============================================ */
+
+/* Hero: texto à esquerda, cartão-resumo à direita */
+.lp-hero {
+  background: var(--lilas-suave);
+  padding: 32px 0 48px;
+  overflow: hidden;
+}
+
+.lp-hero__grid {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.lp-hero__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.lp-crumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.lp-crumbs li + li::before {
+  content: "›";
+  margin-right: 6px;
+  color: var(--lilas-medio);
+}
+
+.lp-crumbs a {
+  color: var(--lilas-deep);
+  text-decoration: none;
+}
+
+.lp-crumbs a:hover {
+  text-decoration: underline;
+}
+
+.lp-hero__place {
+  margin: 8px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--roxo-neon);
+  padding: 6px 12px 6px 8px;
+  border-radius: var(--radius-badge);
+}
+
+.lp-hero__place svg {
+  width: 16px;
+  height: 16px;
+}
+
+.lp-hero__title {
+  margin: 0;
+  font-size: 2.1rem;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: var(--violeta);
+  text-wrap: balance;
+}
+
+.lp-hero__lead {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--violeta);
+  max-width: 40ch;
+}
+
+.lp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.lp-hero__phone {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+/* Cartão-resumo */
+.lp-facts {
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(26, 0, 64, 0.12);
+  overflow: hidden;
+}
+
+.lp-facts__price {
+  background: var(--violeta);
+  color: var(--white);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lp-facts__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lilas-suave);
+}
+
+.lp-facts__value {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.lp-facts__value small {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--neon-yellow);
+}
+
+.lp-facts__note {
+  font-size: 0.85rem;
+  color: var(--lilas-suave);
+}
+
+.lp-facts__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lp-facts__list li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.lp-facts__list li + li {
+  border-top: 1px solid var(--border);
+}
+
+.lp-facts__list strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--violeta);
+}
+
+.lp-facts__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--lilas-suave);
+  color: var(--lilas-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .lp-hero {
+    padding: 40px 0 72px;
+  }
+  .lp-hero__grid {
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 64px;
+  }
+  .lp-hero__title {
+    font-size: 3.4rem;
+    letter-spacing: -2px;
+  }
+}
+
+/* Texto da localidade em blocos */
+.lp-story__container {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lp-story__title {
+  margin: 0 0 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--roxo-neon);
+}
+
+.lp-story__block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+
+.lp-story__heading {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--violeta);
+  text-wrap: balance;
+}
+
+.lp-story__text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lp-story__text p {
+  margin: 0;
+  color: var(--text-soft);
+  max-width: 62ch;
+}
+
+@media (min-width: 900px) {
+  .lp-story__block {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 56px;
+    padding: 40px 0;
+  }
+  .lp-story__heading {
+    font-size: 1.75rem;
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+}
+
+/* Zonas: ilustração em anel (não é um mapa geográfico).
+   Cada zona é um link para o WhatsApp com a zona já escrita. */
+.lp-zones__container {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.lp-zones__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.lp-zones__title {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--violeta);
+  text-wrap: balance;
+}
+
+.lp-zones__text {
+  margin: 0;
+  color: var(--text-soft);
+  max-width: 40ch;
+}
+
+.lp-zones__ring,
+.lp-zones__center {
+  display: none;
+}
+
+.lp-zones__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lp-zones__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 8px 14px 8px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--violeta);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(26, 0, 64, 0.06);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lp-zones__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lilas-deep);
+  flex-shrink: 0;
+  transition: background 0.25s ease;
+}
+
+.lp-zones__dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-yellow);
+  opacity: 0;
+}
+
+/* Etiqueta "Pedir recolha →": escondida, aparece ao passar por cima */
+.lp-zones__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--neon-yellow);
+  transition: max-width 0.3s ease, opacity 0.25s ease;
+}
+
+.lp-zones__go svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.lp-zones__chip:hover,
+.lp-zones__chip:focus-visible {
+  background: var(--roxo-neon);
+  color: var(--white);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(123, 47, 190, 0.3);
+}
+
+.lp-zones__chip:hover .lp-zones__dot,
+.lp-zones__chip:focus-visible .lp-zones__dot {
+  background: var(--neon-yellow);
+}
+
+.lp-zones__chip:hover .lp-zones__dot::after,
+.lp-zones__chip:focus-visible .lp-zones__dot::after {
+  animation: zone-ping 1.2s ease-out infinite;
+}
+
+.lp-zones__chip:hover .lp-zones__go,
+.lp-zones__chip:focus-visible .lp-zones__go {
+  max-width: 120px;
+  opacity: 1;
+}
+
+@keyframes zone-ping {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .lp-zones__container {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .lp-zones__map {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    max-width: 100%;
+  }
+
+  /* anel tracejado que roda devagar */
+  .lp-zones__ring {
+    display: block;
+    position: absolute;
+    inset: 12% 10%;
+    border: 2px dashed var(--lilas-medio);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: ring-spin 60s linear infinite;
+  }
+
+  .lp-zones__center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: var(--roxo-neon);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.15;
+    padding: 12px;
+  }
+
+  .lp-zones__center svg {
+    color: var(--neon-yellow);
+  }
+
+  /* ondas a sair do centro */
+  .lp-zones__pulse,
+  .lp-zones__pulse::after {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--roxo-neon);
+    animation: center-wave 3s ease-out infinite;
+  }
+
+  .lp-zones__pulse::after {
+    content: "";
+    animation-delay: 1.5s;
+  }
+
+  .lp-zones__list li {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .lp-zones__list li:hover,
+  .lp-zones__list li:focus-within {
+    z-index: 2;
+  }
+}
+
+@keyframes ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes center-wave {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* No telemóvel não há "passar por cima": mostra sempre a seta */
+@media (hover: none) {
+  .lp-zones__go {
+    max-width: 120px;
+    opacity: 1;
+    color: var(--lilas-deep);
+  }
+  .lp-zones__go {
+    font-size: 0;
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-zones__ring,
+  .lp-zones__pulse,
+  .lp-zones__pulse::after,
+  .lp-zones__chip:hover .lp-zones__dot::after {
+    animation: none;
+  }
+  .lp-zones__chip {
+    transition: none;
+  }
+}
+
+/* Também estamos em */
+.lp-nearby__container {
+  max-width: 1000px;
+}
+
+.lp-nearby__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.lp-nearby__card {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 24px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 2px solid var(--lilas-suave);
+  text-decoration: none;
+  color: var(--violeta);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lp-nearby__card:hover,
+.lp-nearby__card:focus-visible {
+  border-color: var(--lilas-deep);
+  transform: translateY(-2px);
+}
+
+.lp-nearby__name {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.lp-nearby__areas {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.lp-nearby__go {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--lilas-deep);
+}
+
+.lp-nearby__go svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (min-width: 768px) {
+  .lp-nearby__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Cartão-resumo: escolha "Só lavado" / "Lavado + passado" */
+.lp-facts__switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(237, 224, 255, 0.12);
+}
+
+.lp-facts__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--lilas-suave);
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lp-facts__tab svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.lp-facts__tab:hover {
+  color: var(--white);
+}
+
+.lp-facts__tab.is-active {
+  background: var(--neon-yellow);
+  color: var(--violeta);
+}
+
+.lp-facts__tab:focus-visible {
+  outline: 2px solid var(--neon-yellow);
+  outline-offset: 2px;
+}
+
+.lp-facts__figure {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: facts-in 0.35s ease both;
+}
+
+.lp-facts__perk {
+  animation: facts-in 0.35s ease both;
+}
+
+.lp-facts__icon--accent {
+  background: var(--roxo-neon);
+  color: var(--neon-yellow);
+}
+
+.lp-facts__cta {
+  padding: 0 24px 24px;
+}
+
+.lp-facts__btn {
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+}
+
+@keyframes facts-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-facts__figure,
+  .lp-facts__perk {
+    animation: none;
+  }
+}
+
+/* ---------- FAQ: link por baixo da resposta + fecho com CTA ---------- */
+.faq__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--lilas-deep);
+  text-decoration: none;
+}
+
+.faq__link:hover,
+.faq__link:focus-visible {
+  text-decoration: underline;
+}
+
+.faq-cta {
+  max-width: 640px;
+  margin: 20px auto 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  padding: 20px 22px;
+  border-radius: var(--radius-card);
+  background: var(--violeta);
+  color: var(--white);
+}
+
+.faq-cta__text {
+  min-width: 0;
+  flex: 1 1 260px;
+}
+
+.faq-cta__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.faq-cta__lead {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--lilas-suave);
+}
+
+.faq-cta__btn {
+  flex-shrink: 0;
+}

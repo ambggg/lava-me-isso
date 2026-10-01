@@ -2,7 +2,7 @@ const steps = [
   {
     number: 1,
     title: "Manda mensagem",
-    text: "Diz-nos quantas peças e se estás em Santarém ou no Cartaxo.",
+    text: "Diz-nos quantas peças são e a tua morada.",
   },
   {
     number: 2,

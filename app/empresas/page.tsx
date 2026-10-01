@@ -8,16 +8,16 @@ import { EmpresasFinalCta } from "@/components/EmpresasFinalCta";
 import { WhatsappB2BFloat } from "@/components/WhatsappB2BFloat";
 
 export const metadata: Metadata = {
-  title: "Lavandaria para empresas e alojamento local | Santarém e Cartaxo | lava-me isso.",
+  title: "Lavandaria para Empresas e Alojamento Local | lava-me isso.",
   description:
-    "Lavandaria para empresas em Santarém e Cartaxo — alojamento local, restaurantes, clínicas e ginásios. Recolhas regulares, prazos garantidos e faturação mensal.",
+    "Lavandaria para empresas em Santarém, Cartaxo, Azambuja e Lisboa Oriente — alojamento local, restaurantes, clínicas e ginásios. Recolhas regulares, prazos garantidos e faturação mensal.",
   alternates: {
     canonical: "/empresas",
   },
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    title: "lava-me isso. para empresas — Santarém e Cartaxo",
+    title: "lava-me isso. para empresas — Santarém, Cartaxo, Azambuja e Lisboa Oriente",
     description:
       "Recolhas regulares, prazos garantidos e faturação mensal para alojamento local, restauração e empresas.",
     url: "https://lavameisso.pt/empresas",

@@ -1,4 +1,6 @@
 import { FaqList } from "./FaqList";
+import { FaqCta } from "./FaqCta";
+import { whatsappEngomadoriaLink } from "@/lib/config";
 
 export const engomadoriaFaqs = [
   {
@@ -11,15 +13,15 @@ export const engomadoriaFaqs = [
   },
   {
     question: "Têm um pacote que inclua lavar, secar e passar?",
-    answer: "Sim — o pack completo (lavar + secar + passar a ferro) custa 29€ + IVA por saco de 7kg, com recolha e entrega incluídas.",
+    answer: "Sim — o pack completo (lavar + secar + passar a ferro) custa 29€ + IVA por saco de 8kg, com recolha e entrega incluídas.",
   },
   {
     question: "Preciso de trazer a roupa já lavada?",
     answer: "Não é obrigatório. Se só precisares de passar a ferro, cobramos por peça. Se quiseres o pack completo, tratamos de tudo desde a lavagem.",
   },
   {
-    question: "Fazem recolha e entrega em Santarém e no Cartaxo?",
-    answer: "Sim, em toda a zona que servimos. Combina o dia e a hora no WhatsApp.",
+    question: "Em que zonas fazem recolha e entrega?",
+    answer: "Em Santarém, Cartaxo, Azambuja e Lisboa Oriente (Parque das Nações, Olivais Norte, Moscavide, Portela e Sacavém). Combina o dia e a hora no WhatsApp.",
   },
 ];
 
@@ -31,6 +33,7 @@ export function EngomadoriaFaq() {
           Perguntas frequentes sobre engomadoria
         </h2>
         <FaqList items={engomadoriaFaqs} />
+        <FaqCta href={whatsappEngomadoriaLink} event="cta_whatsapp_engomadoria" />
       </div>
     </section>
   );

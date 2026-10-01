@@ -1,4 +1,6 @@
 import { JsonLd } from "./JsonLd";
+import { FaqCta } from "./FaqCta";
+import { whatsappLink } from "@/lib/config";
 import { buildFaqPageSchema } from "@/lib/schema";
 
 const faqs = [
@@ -33,7 +35,7 @@ const faqs = [
     schemaAnswer: "MBWay, transferência ou numerário na entrega. À tua escolha.",
   },
   {
-    question: "O que cabe num saco de 7kg?",
+    question: "O que cabe num saco de 8kg?",
     answer:
       "Aproximadamente 25 a 40 peças de roupa — t-shirts, calças, camisolas, roupa interior. Dá para a roupa suja de uma semana.",
     schemaAnswer:
@@ -78,6 +80,7 @@ export function Faq() {
             </details>
           ))}
         </div>
+        <FaqCta href={whatsappLink} event="whatsapp_click" />
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import { whatsappLink } from "@/lib/config";
 // página vazia. Remove este bloco assim que o primeiro artigo for publicado.
 export const metadata: Metadata = {
   title: "Dicas | lava-me isso.",
-  description: "Dicas sobre lavandaria, cuidados com a roupa e o dia a dia em Santarém e Cartaxo.",
+  description: "Dicas sobre lavandaria, cuidados com a roupa e o dia a dia em Santarém, Cartaxo, Azambuja e Lisboa Oriente.",
   alternates: {
     canonical: "/dicas",
   },

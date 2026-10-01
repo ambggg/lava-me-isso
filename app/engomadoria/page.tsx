@@ -13,16 +13,16 @@ import { whatsappEngomadoriaLink } from "@/lib/config";
 const PAGE_URL = "https://lavameisso.pt/engomadoria";
 
 export const metadata: Metadata = {
-  title: "Passar a Ferro em Santarém e Cartaxo | lava-me isso.",
+  title: "Engomadoria e Passar a Ferro ao Domicílio | lava-me isso.",
   description:
-    "Passamos a ferro em Santarém e Cartaxo, com recolha ao domicílio. Camisa a partir de 3€ + IVA, com cabide incluído. Pede no WhatsApp.",
+    "Passamos a ferro com recolha ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente. Camisa a partir de 3€ + IVA, com cabide incluído. Pede no WhatsApp.",
   alternates: {
     canonical: "/engomadoria",
   },
   openGraph: {
     type: "website",
     locale: "pt_PT",
-    title: "Engomadoria com recolha em Santarém e Cartaxo — lava-me isso.",
+    title: "Engomadoria ao domicílio — lava-me isso.",
     description: "Camisas a 3€ + IVA, cabide incluído. Recolhemos, engomamos e entregamos à tua porta.",
     url: PAGE_URL,
   },
@@ -37,7 +37,7 @@ export default function Engomadoria() {
       <JsonLd
         data={buildServiceSchema({
           name: "Engomadoria com recolha ao domicílio",
-          description: "Serviço de passar a ferro com recolha e entrega ao domicílio em Santarém e Cartaxo.",
+          description: "Serviço de passar a ferro com recolha e entrega ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente.",
           url: PAGE_URL,
         })}
       />

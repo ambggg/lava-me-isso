@@ -22,7 +22,7 @@ export function EmpresasAudience() {
     <section className="section" id="para-quem" aria-labelledby="para-quem-title">
       <div className="container">
         <h2 id="para-quem-title" className="section__title">
-          Lavandaria para empresas em Santarém e Cartaxo
+          Lavandaria para empresas em Santarém, Cartaxo, Azambuja e Lisboa Oriente
         </h2>
         <ul className="cards">
           {audiences.map((item) => (

@@ -10,7 +10,7 @@ export function EmpresasHero() {
         <h1 className="hero__title">Lavandaria para o teu negócio. Sem falhas, sem stress.</h1>
         <p className="hero__subtitle">
           Recolhas regulares, prazos garantidos e faturação mensal para alojamentos locais,
-          restauração e empresas de Santarém e Cartaxo.
+          restauração e empresas de Santarém, Cartaxo, Azambuja e Lisboa Oriente.
         </p>
         <WhatsappB2BButton location="hero-b2b" className="btn btn--primary btn--large">
           Pedir Proposta no WhatsApp 🧺

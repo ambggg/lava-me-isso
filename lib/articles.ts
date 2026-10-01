@@ -23,7 +23,7 @@ const quantoCustaLavarUmEdredao: Article = {
     "Porque é que os edredões nunca saem bem lavados na máquina de casa — e quanto custa mandá-los lavar como deve ser.",
   metaTitle: "Quanto Custa Lavar um Edredão? | lava-me isso.",
   metaDescription:
-    "Descobre porque é que a máquina de casa não lava bem um edredão e quanto custa mandá-lo lavar numa lavandaria em Santarém ou no Cartaxo.",
+    "Descobre porque é que a máquina de casa não lava bem um edredão e quanto custa mandá-lo lavar numa lavandaria com recolha ao domicílio.",
   publishedAt: "2026-07-21",
   status: "draft",
   blocks: [
@@ -57,7 +57,7 @@ const quantoCustaLavarUmEdredao: Article = {
     },
     {
       type: "paragraph",
-      text: "Um edredão de casal cabe confortavelmente num saco de 7kg quando pesado seco — o nosso preço de 15€ + IVA por saco (recolha e entrega incluídas) aplica-se na mesma. Se tiveres um edredão maior (super king, ou com enchimento extra grosso de inverno), pode ocupar mais do que um saco. Nesse caso, é só avisares-nos no WhatsApp com as medidas ou o peso aproximado, e dizemos-te logo se precisas de um saco extra.",
+      text: "Um edredão de casal cabe confortavelmente num saco de 8kg quando pesado seco — o nosso preço de 15€ + IVA por saco (recolha e entrega incluídas) aplica-se na mesma. Se tiveres um edredão maior (super king, ou com enchimento extra grosso de inverno), pode ocupar mais do que um saco. Nesse caso, é só avisares-nos no WhatsApp com as medidas ou o peso aproximado, e dizemos-te logo se precisas de um saco extra.",
     },
     {
       type: "paragraph",
@@ -77,7 +77,7 @@ const quantoCustaLavarUmEdredao: Article = {
     },
     {
       type: "paragraph",
-      text: "A mesma lógica aplica-se a cobertores grandes, mantas pesadas de lã e almofadões de sofá — tudo o que não cabe bem na máquina de casa, cabe (e sai muito melhor) numa lavagem industrial. Se tiveres dúvidas sobre se algo cabe num saco de 7kg ou precisa de mais espaço, é mais fácil perguntares-nos diretamente do que tentar adivinhar.",
+      text: "A mesma lógica aplica-se a cobertores grandes, mantas pesadas de lã e almofadões de sofá — tudo o que não cabe bem na máquina de casa, cabe (e sai muito melhor) numa lavagem industrial. Se tiveres dúvidas sobre se algo cabe num saco de 8kg ou precisa de mais espaço, é mais fácil perguntares-nos diretamente do que tentar adivinhar.",
     },
     {
       type: "heading",
@@ -93,7 +93,7 @@ const quantoCustaLavarUmEdredao: Article = {
     },
     {
       type: "paragraph",
-      text: "Se o teu edredão já passou dos tempos em que a máquina de casa dava conta do recado — ou nunca deu, sejamos sinceros — não precisas de o levar a lado nenhum. Manda-nos mensagem, combinamos a recolha em Santarém ou no Cartaxo, e devolvemos-to lavado a sério, seco por completo e pronto para a cama.",
+      text: "Se o teu edredão já passou dos tempos em que a máquina de casa dava conta do recado — ou nunca deu, sejamos sinceros — não precisas de o levar a lado nenhum. Manda-nos mensagem, combinamos a recolha, e devolvemos-to lavado a sério, seco por completo e pronto para a cama.",
     },
   ],
 };

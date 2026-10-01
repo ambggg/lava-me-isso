@@ -8,7 +8,7 @@ export function EngomadoriaHero() {
       <div className="hero__inner container">
         <Logo variant="light" className="hero__logo" />
         <p className="badge">📍 Santarém · Cartaxo</p>
-        <h1 className="hero__title">Serviço de Passar a Ferro em Santarém e Cartaxo</h1>
+        <h1 className="hero__title">Engomadoria ao domicílio em Santarém, Cartaxo, Azambuja e Lisboa Oriente</h1>
         <p className="hero__subtitle">
           Camisas prontas a vestir, cabide incluído. Recolhemos, engomamos e entregamos à tua
           porta.

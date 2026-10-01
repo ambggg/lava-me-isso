@@ -1,7 +1,19 @@
 import { whatsappAzambujaLink, whatsappCartaxoLink, whatsappOrienteLink, whatsappSantaremLink } from "./config";
 
+/**
+ * Páginas de localidade (SEO local).
+ * Regras de escrita:
+ * - A palavra-chave principal é "lavandaria em/no/na <zona>"; as secundárias são
+ *   "lavandaria ao domicílio", "passar a ferro / engomadoria", "lençóis e toalhas", "preço".
+ * - Cada página tem texto próprio (marcos e freguesias da zona) para não haver conteúdo duplicado.
+ * - Preços sempre "+ IVA" e oferta de IVA a clientes mensais.
+ * - Tom profissional: processo, cuidado, prazos e fatura — nada de "pequena equipa".
+ */
+
 // Texto simples (sem JSX) — usado tanto para mostrar a FAQ como para o schema FAQPage.
-type PlainFaqItem = { question: string; answer: string };
+type PlainFaqItem = { question: string; answer: string; link?: { href: string; label: string } };
+
+export type LocationSection = { heading: string; paragraphs: string[] };
 
 export type LocationData = {
   slug: "santarem" | "cartaxo" | "azambuja" | "lisboa-oriente";
@@ -14,31 +26,84 @@ export type LocationData = {
   ogDescription: string;
   whatsappLink: string;
   whatsappEvent: string;
-  intro: string[];
+  sections: LocationSection[];
   areas: string[];
-  steps: { title: string; text: string }[];
   faqs: PlainFaqItem[];
 };
+
+// Parágrafos comuns sobre o processo — escritos uma vez, iguais em todas as zonas.
+const PROCESS_PARAGRAPH =
+  "Cada cliente tem o seu saco e cada saco é lavado e seco num ciclo próprio: a tua roupa nunca se mistura com a de outros clientes. Separamos brancos e cores, seguimos as etiquetas de lavagem e lavamos lençóis e toalhas à parte, no Saco Casa. Combinamos a data de entrega logo na recolha e passamos fatura com NIF sempre que pedires.";
+
+function priceFaq(where: string): PlainFaqItem {
+  return {
+    question: `Quanto custa a lavandaria ${where}?`,
+    answer:
+      "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA para lavar, secar e passar a ferro. A recolha e a entrega estão incluídas e os clientes com recolha todos os meses não pagam IVA.",
+    link: { href: "#precos", label: "Ver todos os preços" },
+  };
+}
+
+function ironingFaq(where: string): PlainFaqItem {
+  return {
+    question: `Também passam a ferro ${where}?`,
+    answer:
+      "Sim. Com o serviço Lavar + Secar + Passar a Ferro (29€ + IVA por saco de 8kg) a roupa volta pronta a vestir. Também engomamos camisas avulsas a 3€ + IVA, com cabide incluído.",
+    link: { href: "/engomadoria", label: "Ver o serviço de engomadoria" },
+  };
+}
+
+const SHEETS_FAQ: PlainFaqItem = {
+  question: "Também lavam lençóis, toalhas e edredões?",
+  answer:
+    "Sim. Lençóis e toalhas vão no Saco Casa, lavado à parte da roupa do dia-a-dia. Edredões e cobertores tratamos à parte: manda-nos o tamanho no WhatsApp e dizemos-te o preço.",
+  link: { href: "#sacos", label: "Conhecer o Saco Casa" },
+};
+
+const FAMILY_FAQ: PlainFaqItem = {
+  question: "O serviço dá para a roupa de uma família grande?",
+  answer:
+    "Sim. Podes encher vários sacos de 8kg de uma vez: cada saco é lavado num ciclo próprio e volta dobrado. Para famílias com muita roupa, a recolha todos os meses compensa — oferecemos o IVA.",
+  link: { href: "#precos", label: "Ver preços" },
+};
+
+const BUSINESS_ANSWER =
+  "Sim. Temos um serviço próprio para negócios, com recolhas em dias fixos e faturação mensal. Consulta a nossa página para empresas ou fala connosco no WhatsApp.";
 
 export const santarem: LocationData = {
   slug: "santarem",
   city: "Santarém",
   preposition: "em",
   h1: "Lavandaria em Santarém com recolha e entrega ao domicílio",
-  metaTitle: "Lavandaria em Santarém | Recolha e Entrega ao Domicílio",
+  metaTitle: "Lavandaria em Santarém com Recolha ao Domicílio | lava-me isso.",
   metaDescription:
-    "Lavandaria em Santarém com recolha e entrega ao domicílio. Saco de 7kg por 15€ + IVA. Pede a tua recolha no WhatsApp.",
+    "Lavandaria em Santarém com recolha e entrega à porta. Lavar e dobrar desde 15€ + IVA, lavar e passar a ferro 29€ + IVA. Pede a recolha no WhatsApp.",
   ogTitle: "Lavandaria em Santarém — lava-me isso.",
-  ogDescription: "Recolhemos, lavamos e entregamos a tua roupa em Santarém, sem saíres de casa.",
+  ogDescription: "Recolhemos, lavamos, passamos a ferro e entregamos a tua roupa em Santarém, sem saíres de casa.",
   whatsappLink: whatsappSantaremLink,
   whatsappEvent: "cta_whatsapp_santarem",
-  intro: [
-    "Se vives ou trabalhas em Santarém, sabes bem como é difícil arranjar tempo para tratar da roupa entre o trabalho, a família e o resto da vida. A lava-me isso. nasceu precisamente para tirar essa tarefa da tua lista — recolhemos a roupa suja à tua porta, lavamos, secamos e, se quiseres, passamos a ferro, devolvendo tudo pronto a arrumar sem teres de sair de casa nem uma vez.",
-    "Servimos toda a cidade de Santarém, do centro histórico — Sé, Marvila, Alcáçova — até às freguesias mais afastadas, como Alcanede, Pernes, Vale de Santarém, Achete ou Alcanhões. Se moras perto do Instituto Politécnico de Santarém ou trabalhas na zona do Hospital Distrital, também te vimos buscar a roupa sem problema — combinamos sempre o dia e a hora que te dão mais jeito, incluindo ao fim do dia ou ao fim de semana.",
-    "Como funciona na prática? Mandas-nos uma mensagem no WhatsApp a dizer a tua morada em Santarém e o dia ideal para a recolha. Aparecemos à hora combinada, levamos o saco de roupa e devolvemos tudo lavado, seco e dobrado — ou engomado, se pediste esse serviço. Pagas por MBWay, transferência ou numerário na entrega, sem complicações.",
-    "Um saco de 7kg custa 15€ + IVA, com recolha e entrega já incluídas no preço — e, se fores cliente mensal, oferecemos o IVA. Se tiveres peças delicadas ou que precisem de cuidado especial, diz-nos no WhatsApp antes da recolha: separamos cores, usamos água fria quando é preciso e seguimos sempre as etiquetas.",
-    "Somos uma equipa local, não uma marca nacional a operar à distância: conhecemos Santarém, sabemos como é o trânsito no centro à hora de almoço e adaptamo-nos à tua rotina, não o contrário. Não há máquinas anónimas nem central de atendimento — falas sempre com quem trata da tua roupa.",
-    "Trabalhamos tanto com particulares como com alojamento local, restaurantes e outros negócios da cidade. Se és um destes casos, temos um serviço à parte pensado para o teu volume e para a tua faturação mensal — recolhas em dias fixos, sem teres de pensar nisso todas as semanas.",
+  sections: [
+    {
+      heading: "Lavandaria ao domicílio em Santarém",
+      paragraphs: [
+        "A lava-me isso. é uma lavandaria com recolha e entrega ao domicílio em Santarém. Vamos buscar a roupa à tua porta, lavamos, secamos, passamos a ferro se quiseres e devolvemos tudo dobrado, pronto a arrumar. Sem filas, sem horários de loja e sem fins de semana perdidos com a roupa.",
+        "Servimos toda a cidade de Santarém, do centro histórico — Sé, Marvila e Alcáçova — às freguesias à volta, como Alcanede, Pernes, Vale de Santarém, Achete, Alcanhões, Abrã e Póvoa de Santarém. Seja no centro, perto do Hospital Distrital ou numa aldeia do concelho, recolhemos no dia e hora que combinarmos.",
+      ],
+    },
+    {
+      heading: "Lavar e passar a ferro em Santarém: como funciona e quanto custa",
+      paragraphs: [
+        "Mandas-nos mensagem no WhatsApp com a tua morada em Santarém. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com a recolha e a entrega já incluídas. Se fores cliente com recolha todos os meses, oferecemos o IVA. Para camisas, a engomadoria avulsa custa 3€ + IVA por peça, com cabide.",
+      ],
+    },
+    {
+      heading: "Uma lavandaria profissional em Santarém, para casas e empresas",
+      paragraphs: [
+        PROCESS_PARAGRAPH,
+        "Também trabalhamos com alojamento local, ginásios, spas e outros negócios de Santarém, com recolhas em dias fixos e faturação mensal. Toalhas, lençóis e têxteis tratados com o mesmo cuidado, todas as semanas, sem teres de pensar nisso.",
+      ],
+    },
   ],
   areas: [
     "Centro histórico (Sé, Marvila, Alcáçova)",
@@ -50,30 +115,14 @@ export const santarem: LocationData = {
     "Abrã",
     "Póvoa de Santarém",
   ],
-  steps: [
-    {
-      title: "Manda mensagem",
-      text: "Diz-nos que estás em Santarém e qual o dia que te dá jeito.",
-    },
-    {
-      title: "Recolhemos à porta",
-      text: "Aparecemos na hora combinada, em qualquer zona da cidade.",
-    },
-    {
-      title: "Devolvemos à porta",
-      text: "Lavada, seca e dobrada — ou engomada, se pediste.",
-    },
-  ],
   faqs: [
+    priceFaq("em Santarém"),
+    ironingFaq("em Santarém"),
     {
       question: "Entregam em toda a cidade de Santarém, incluindo o centro histórico?",
       answer:
         "Sim. Cobrimos o centro histórico (Sé, Marvila, Alcáçova) e as freguesias à volta, como Alcanede, Pernes, Vale de Santarém e Alcanhões. Manda a tua morada no WhatsApp e confirmamos na hora.",
-    },
-    {
-      question: "Servem estudantes do Instituto Politécnico de Santarém?",
-      answer:
-        "Sim, com todo o gosto. Muitos estudantes deslocados usam o nosso serviço porque não têm máquina de lavar em casa ou preferem poupar tempo para estudar.",
+      link: { href: "#zonas", label: "Ver zonas servidas" },
     },
     {
       question: "Quando recebo a roupa de volta em Santarém?",
@@ -84,10 +133,12 @@ export const santarem: LocationData = {
       answer:
         "Sim, tentamos sempre adaptar-nos ao teu horário — incluindo fins de semana, quando a rota o permite. Combina connosco no WhatsApp.",
     },
+    FAMILY_FAQ,
+    SHEETS_FAQ,
     {
-      question: "Trabalham com alojamento local ou restaurantes em Santarém?",
-      answer:
-        "Sim — temos um serviço próprio para negócios, com recolhas fixas e faturação mensal. Consulta a nossa página para empresas.",
+      question: "Trabalham com alojamento local, ginásios ou spas em Santarém?",
+      answer: BUSINESS_ANSWER,
+      link: { href: "/empresas", label: "Ver lavandaria para empresas" },
     },
   ],
 };
@@ -97,20 +148,35 @@ export const cartaxo: LocationData = {
   city: "Cartaxo",
   preposition: "no",
   h1: "Lavandaria no Cartaxo com recolha e entrega ao domicílio",
-  metaTitle: "Lavandaria no Cartaxo | Recolha e Entrega ao Domicílio",
+  metaTitle: "Lavandaria no Cartaxo com Recolha ao Domicílio | lava-me isso.",
   metaDescription:
-    "Lavandaria no Cartaxo com recolha e entrega ao domicílio. Saco de 7kg por 15€ + IVA. Pede a tua recolha no WhatsApp.",
+    "Lavandaria no Cartaxo com recolha e entrega à porta. Lavar e dobrar desde 15€ + IVA, lavar e passar a ferro 29€ + IVA. Pede a recolha no WhatsApp.",
   ogTitle: "Lavandaria no Cartaxo — lava-me isso.",
-  ogDescription: "Recolhemos, lavamos e entregamos a tua roupa no Cartaxo, sem saíres de casa.",
+  ogDescription: "Recolhemos, lavamos, passamos a ferro e entregamos a tua roupa no Cartaxo, sem saíres de casa.",
   whatsappLink: whatsappCartaxoLink,
   whatsappEvent: "cta_whatsapp_cartaxo",
-  intro: [
-    "O Cartaxo é conhecido pelo vinho e pela vida tranquila — mas isso não significa que sobre tempo para tratar da roupa suja. A lava-me isso. leva a lavandaria até à tua porta: recolhemos, lavamos, secamos e, se quiseres, passamos a ferro, devolvendo tudo pronto a vestir, sem teres de sair de casa.",
-    "Servimos o Cartaxo e as freguesias da União de Freguesias do Cartaxo e Vale da Pinta, além de Ereira, Pontével, Valada e Vila Chã de Ourique. Se vives perto do centro, da zona da estação ou mais para os lados das quintas e adegas da região, combinamos sempre a recolha para a hora que te dá mais jeito.",
-    "O processo é simples: manda-nos mensagem no WhatsApp com a tua morada no Cartaxo e o dia ideal. Vamos buscar o saco de roupa suja à porta, tratamos de tudo e devolvemos lavado, seco e dobrado — ou engomado — no dia combinado. Pagamento por MBWay, transferência ou numerário na entrega, o que for mais prático para ti.",
-    "Um saco de 7kg custa 15€ + IVA, já com recolha e entrega incluídas — e, se fores cliente mensal, oferecemos o IVA. Se tiveres peças delicadas ou que precisem de cuidado especial, avisa-nos no WhatsApp antes da recolha: separamos cores, usamos água fria quando é preciso e seguimos sempre as etiquetas de lavagem.",
-    "Ao contrário de uma lavandaria industrial ou de uma marca nacional, somos uma equipa pequena e local: conhecemos as ruas do Cartaxo, sabemos onde fica cada quinta e cada rua da vila, e tratamos a tua roupa com o mesmo cuidado que temos com a nossa. Falas sempre connosco, não com uma central de atendimento.",
-    "Se tens um restaurante, um alojamento local ou outro negócio no Cartaxo, também temos um serviço próprio pensado para volumes maiores, com recolhas em dias fixos e fatura mensal simplificada — para não teres de pensar na lavandaria todas as semanas.",
+  sections: [
+    {
+      heading: "Lavandaria ao domicílio no Cartaxo",
+      paragraphs: [
+        "A lava-me isso. é uma lavandaria com recolha e entrega ao domicílio no Cartaxo. Vamos buscar a roupa a casa, lavamos, secamos, passamos a ferro se quiseres e devolvemos tudo dobrado, pronto a vestir ou a arrumar — sem teres de sair de casa.",
+        "Servimos o Cartaxo e Vale da Pinta, Ereira, Pontével, Valada e Vila Chã de Ourique. Do centro e da zona da estação às quintas e adegas mais afastadas, combinamos a recolha para o dia e a hora que te dão jeito.",
+      ],
+    },
+    {
+      heading: "Lavar e passar a ferro no Cartaxo: como funciona e quanto custa",
+      paragraphs: [
+        "Mandas-nos mensagem no WhatsApp com a tua morada no Cartaxo. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, já com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide.",
+      ],
+    },
+    {
+      heading: "Uma lavandaria profissional no Cartaxo, para casas, quintas e empresas",
+      paragraphs: [
+        PROCESS_PARAGRAPH,
+        "Para quintas, adegas, alojamento local e outros negócios do concelho, temos recolhas em dias fixos e faturação mensal: toalhas, fardas e têxteis tratados todas as semanas, sem teres de pensar na lavandaria.",
+      ],
+    },
   ],
   areas: [
     "Cartaxo (centro e zona da estação)",
@@ -120,42 +186,31 @@ export const cartaxo: LocationData = {
     "Valada",
     "Vila Chã de Ourique",
   ],
-  steps: [
-    {
-      title: "Manda mensagem",
-      text: "Diz-nos que estás no Cartaxo e qual o dia que te dá jeito.",
-    },
-    {
-      title: "Recolhemos à porta",
-      text: "Aparecemos na hora combinada, na vila ou nas freguesias à volta.",
-    },
-    {
-      title: "Devolvemos à porta",
-      text: "Lavada, seca e dobrada — ou engomada, se pediste.",
-    },
-  ],
   faqs: [
+    priceFaq("no Cartaxo"),
+    ironingFaq("no Cartaxo"),
     {
       question: "Entregam em toda a vila do Cartaxo e freguesias à volta?",
       answer:
         "Sim. Cobrimos o Cartaxo, Vale da Pinta, Ereira, Pontével, Valada e Vila Chã de Ourique. Confirma a tua morada no WhatsApp e dizemos-te logo se está dentro da rota.",
-    },
-    {
-      question: "Trabalham com as quintas e adegas da região?",
-      answer:
-        "Sim — tratamos de toalhas, fardas e têxteis para negócios ligados ao turismo e ao vinho na zona. Fala connosco para um plano à medida.",
+      link: { href: "#zonas", label: "Ver zonas servidas" },
     },
     {
       question: "Quando recebo a roupa de volta no Cartaxo?",
       answer: "Combinamos a data de entrega contigo logo no dia da recolha, tal como em Santarém.",
     },
     {
-      question: "Como faço a primeira encomenda no Cartaxo?",
-      answer: "Manda mensagem no WhatsApp com a tua morada e o dia que preferes. Combinamos a recolha e é só isso.",
-    },
-    {
       question: "Fazem recolha em casas mais afastadas do centro do Cartaxo?",
-      answer: "Sim, desde que estejamos a passar na rota nesse dia. Pergunta-nos a tua zona exata e confirmamos rapidamente.",
+      answer:
+        "Sim, desde que estejamos a passar na rota nesse dia. Pergunta-nos a tua zona exata e confirmamos rapidamente.",
+    },
+    SHEETS_FAQ,
+    FAMILY_FAQ,
+    {
+      question: "Trabalham com as quintas e adegas da região?",
+      answer:
+        "Sim — tratamos de toalhas, fardas e têxteis para negócios ligados ao turismo e ao vinho na zona, com recolhas fixas e faturação mensal. Fala connosco para um plano à medida.",
+      link: { href: "/empresas", label: "Ver lavandaria para empresas" },
     },
   ],
 };
@@ -165,60 +220,61 @@ export const lisboaOriente: LocationData = {
   city: "Lisboa Oriente",
   preposition: "em",
   h1: "Lavandaria em Lisboa Oriente com recolha e entrega ao domicílio",
-  metaTitle: "Lavandaria no Parque das Nações e Lisboa Oriente | Recolha e Entrega",
+  metaTitle: "Lavandaria no Parque das Nações e Lisboa Oriente | lava-me isso.",
   metaDescription:
-    "Lavandaria com recolha e entrega ao domicílio no Parque das Nações, Olivais Norte, Moscavide, Portela e Sacavém. Saco de 7kg por 15€ + IVA. Pede no WhatsApp.",
+    "Lavandaria ao domicílio no Parque das Nações, Olivais, Moscavide, Portela e Sacavém. Desde 15€ + IVA, passar a ferro 29€ + IVA. Pede no WhatsApp.",
   ogTitle: "Lavandaria em Lisboa Oriente — lava-me isso.",
   ogDescription:
-    "Recolhemos, lavamos e entregamos a tua roupa no Parque das Nações, Olivais Norte, Moscavide, Portela e Sacavém.",
+    "Recolhemos, lavamos, passamos a ferro e entregamos a tua roupa no Parque das Nações, Olivais Norte, Moscavide, Portela e Sacavém.",
   whatsappLink: whatsappOrienteLink,
   whatsappEvent: "cta_whatsapp_oriente",
-  intro: [
-    "Entre o trabalho, o trânsito e o resto da vida, tratar da roupa é das primeiras coisas a ficar para trás. A lava-me isso. leva a lavandaria até à tua porta em Lisboa Oriente: deixamos-te os sacos, recolhemos a roupa suja, lavamos, secamos e devolvemos tudo dobrado — sem saíres de casa.",
-    "Servimos o Parque das Nações, do Oriente à zona norte junto ao Parque Tejo, e as zonas à volta: Olivais Norte, Moscavide, Portela e Sacavém. Se vives perto da Gare do Oriente ou trabalhas num dos escritórios da zona, combinamos a recolha para o dia e a hora que te dão mais jeito.",
-    "Como funciona? Mandas-nos mensagem no WhatsApp com a tua morada. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas — nós tratamos do resto. Pagas por MBWay, transferência ou numerário na entrega.",
-    "Um saco de 7kg custa 15€ + IVA, com recolha e entrega já incluídas — e, se fores cliente mensal, oferecemos o IVA. Tens peças delicadas ou com manchas? Diz-nos no WhatsApp antes da recolha: separamos cores, usamos água fria quando é preciso e seguimos sempre as etiquetas de lavagem.",
-    "Somos uma equipa pequena, não uma cadeia com balcões e senhas: falas sempre com quem trata da tua roupa, não com uma central de atendimento.",
-    "Tens um alojamento local, um ginásio ou um escritório em Lisboa Oriente? Temos um serviço à parte para negócios, com recolhas em dias fixos e fatura mensal — para não teres de pensar na lavandaria todas as semanas.",
+  sections: [
+    {
+      heading: "Lavandaria ao domicílio no Parque das Nações e Lisboa Oriente",
+      paragraphs: [
+        "A lava-me isso. é uma lavandaria com recolha e entrega ao domicílio em Lisboa Oriente. Deixamos-te os sacos, recolhemos a roupa à porta, lavamos, secamos, passamos a ferro se quiseres e devolvemos tudo dobrado — sem idas à lavandaria entre o trabalho e o resto da semana.",
+        "Servimos o Parque das Nações, do Oriente à zona norte junto ao Parque Tejo, e as zonas à volta: Olivais Norte, Moscavide, Portela e Sacavém. Se vives perto da Gare do Oriente ou trabalhas num dos escritórios da zona, combinamos a recolha para o dia e a hora que te dão jeito.",
+      ],
+    },
+    {
+      heading: "Lavar e passar a ferro em Lisboa Oriente: como funciona e quanto custa",
+      paragraphs: [
+        "Mandas-nos mensagem no WhatsApp com a tua morada. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide — prontas para a semana de escritório.",
+      ],
+    },
+    {
+      heading: "Uma lavandaria profissional em Lisboa Oriente, para casas e empresas",
+      paragraphs: [
+        PROCESS_PARAGRAPH,
+        "Para alojamento local, ginásios, escritórios e outros negócios do Parque das Nações e arredores, temos recolhas em dias fixos e faturação mensal — roupa de cama e toalhas sempre prontas para a próxima reserva.",
+      ],
+    },
   ],
   areas: ["Parque das Nações", "Olivais Norte", "Moscavide", "Portela", "Sacavém"],
-  steps: [
-    {
-      title: "Manda mensagem",
-      text: "Diz-nos a tua morada em Lisboa Oriente.",
-    },
-    {
-      title: "Recebes os sacos",
-      text: "Levamos-te os sacos e marcamos o dia da recolha.",
-    },
-    {
-      title: "Devolvemos à porta",
-      text: "Lavada, seca e dobrada — lençóis e toalhas incluídos.",
-    },
-  ],
   faqs: [
+    priceFaq("em Lisboa Oriente"),
+    ironingFaq("no Parque das Nações"),
     {
       question: "Que zonas de Lisboa Oriente servem?",
       answer:
         "Parque das Nações, Olivais Norte, Moscavide, Portela e Sacavém. Manda a tua morada no WhatsApp e confirmamos na hora se está dentro da rota.",
+      link: { href: "#zonas", label: "Ver zonas servidas" },
     },
     {
       question: "Quando recebo a roupa de volta?",
       answer: "Combinamos a data de entrega contigo logo quando marcamos a recolha.",
     },
-    {
-      question: "Também lavam lençóis e toalhas?",
-      answer:
-        "Sim. Vão no Saco Casa, que é lavado à parte da tua roupa do dia-a-dia — assim nada se mistura.",
-    },
+    SHEETS_FAQ,
+    FAMILY_FAQ,
     {
       question: "Como posso pagar?",
-      answer: "MBWay, transferência ou numerário na entrega. À tua escolha.",
+      answer: "MBWay, transferência ou numerário na entrega. Passamos fatura com NIF sempre que pedires.",
     },
     {
       question: "Trabalham com alojamento local no Parque das Nações?",
-      answer:
-        "Sim — temos um serviço próprio para negócios, com recolhas fixas e faturação mensal. Consulta a nossa página para empresas.",
+      answer: BUSINESS_ANSWER,
+      link: { href: "/empresas", label: "Ver lavandaria para empresas" },
     },
   ],
 };
@@ -228,20 +284,35 @@ export const azambuja: LocationData = {
   city: "Azambuja",
   preposition: "na",
   h1: "Lavandaria na Azambuja com recolha e entrega ao domicílio",
-  metaTitle: "Lavandaria na Azambuja | Recolha e Entrega ao Domicílio",
+  metaTitle: "Lavandaria na Azambuja com Recolha ao Domicílio | lava-me isso.",
   metaDescription:
-    "Lavandaria na Azambuja com recolha e entrega ao domicílio. Roupa, lençóis e toalhas. Saco de 7kg por 15€ + IVA. Pede a tua recolha no WhatsApp.",
+    "Lavandaria na Azambuja com recolha e entrega à porta. Lavar e dobrar desde 15€ + IVA, lavar e passar a ferro 29€ + IVA. Pede a recolha no WhatsApp.",
   ogTitle: "Lavandaria na Azambuja — lava-me isso.",
-  ogDescription: "Recolhemos, lavamos e entregamos a tua roupa na Azambuja, sem saíres de casa.",
+  ogDescription: "Recolhemos, lavamos, passamos a ferro e entregamos a tua roupa na Azambuja, sem saíres de casa.",
   whatsappLink: whatsappAzambujaLink,
   whatsappEvent: "cta_whatsapp_azambuja",
-  intro: [
-    "Na Azambuja, entre o comboio para Lisboa, o trabalho e a família, o tempo para tratar da roupa é sempre o que sobra. A lava-me isso. leva a lavandaria até à tua porta: deixamos-te os sacos, recolhemos a roupa suja, lavamos, secamos e devolvemos tudo dobrado — sem saíres de casa.",
-    "Servimos a vila da Azambuja e as freguesias à volta. Se vives perto da estação, no centro ou mais para os lados das quintas, combinamos a recolha para o dia e a hora que te dão mais jeito.",
-    "Como funciona? Mandas-nos mensagem no WhatsApp com a tua morada. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas — nós tratamos do resto. Pagas por MBWay, transferência ou numerário na entrega.",
-    "Um saco de 7kg custa 15€ + IVA, com recolha e entrega já incluídas — e, se fores cliente mensal, oferecemos o IVA. Tens peças delicadas ou com manchas? Diz-nos no WhatsApp antes da recolha: separamos cores, usamos água fria quando é preciso e seguimos sempre as etiquetas de lavagem.",
-    "Somos uma equipa pequena e local, do Ribatejo: falas sempre com quem trata da tua roupa, não com uma central de atendimento.",
-    "Tens um alojamento local, um ginásio, um restaurante ou uma empresa na Azambuja? Temos um serviço à parte para negócios, com recolhas em dias fixos e fatura mensal.",
+  sections: [
+    {
+      heading: "Lavandaria ao domicílio na Azambuja",
+      paragraphs: [
+        "A lava-me isso. é uma lavandaria com recolha e entrega ao domicílio na Azambuja. Entre o comboio para Lisboa, o trabalho e a família, deixa a roupa connosco: recolhemos à porta, lavamos, secamos, passamos a ferro se quiseres e devolvemos tudo dobrado.",
+        "Servimos a vila da Azambuja e as freguesias à volta — Aveiras de Cima, Aveiras de Baixo, Vila Nova da Rainha, Vale do Paraíso e Alcoentre. Perto da estação, no centro ou mais para os lados das quintas, combinamos a recolha para o dia e a hora que te dão jeito.",
+      ],
+    },
+    {
+      heading: "Lavar e passar a ferro na Azambuja: como funciona e quanto custa",
+      paragraphs: [
+        "Mandas-nos mensagem no WhatsApp com a tua morada na Azambuja. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide.",
+      ],
+    },
+    {
+      heading: "Uma lavandaria profissional na Azambuja, para casas e empresas",
+      paragraphs: [
+        PROCESS_PARAGRAPH,
+        "Para alojamento local, ginásios, empresas e outros negócios da Azambuja, temos recolhas em dias fixos e faturação mensal: toalhas, fardas e roupa de cama tratadas todas as semanas, sem teres de pensar na lavandaria.",
+      ],
+    },
   ],
   areas: [
     "Azambuja (vila)",
@@ -251,42 +322,32 @@ export const azambuja: LocationData = {
     "Vale do Paraíso",
     "Alcoentre",
   ],
-  steps: [
-    {
-      title: "Manda mensagem",
-      text: "Diz-nos a tua morada na Azambuja.",
-    },
-    {
-      title: "Recebes os sacos",
-      text: "Levamos-te os sacos e marcamos o dia da recolha.",
-    },
-    {
-      title: "Devolvemos à porta",
-      text: "Lavada, seca e dobrada — lençóis e toalhas incluídos.",
-    },
-  ],
   faqs: [
+    priceFaq("na Azambuja"),
+    ironingFaq("na Azambuja"),
     {
       question: "Que zonas da Azambuja servem?",
       answer:
         "A vila da Azambuja e as freguesias à volta, como Aveiras de Cima, Aveiras de Baixo, Vila Nova da Rainha, Vale do Paraíso e Alcoentre. Manda a tua morada no WhatsApp e confirmamos na hora se está dentro da rota.",
+      link: { href: "#zonas", label: "Ver zonas servidas" },
     },
     {
       question: "Quando recebo a roupa de volta?",
       answer: "Combinamos a data de entrega contigo logo quando marcamos a recolha.",
     },
-    {
-      question: "Também lavam lençóis e toalhas?",
-      answer: "Sim. Vão no Saco Casa, que é lavado à parte da tua roupa do dia-a-dia — assim nada se mistura.",
-    },
+    SHEETS_FAQ,
+    FAMILY_FAQ,
     {
       question: "Como posso pagar?",
-      answer: "MBWay, transferência ou numerário na entrega. À tua escolha.",
+      answer: "MBWay, transferência ou numerário na entrega. Passamos fatura com NIF sempre que pedires.",
     },
     {
       question: "Trabalham com empresas e alojamento local na Azambuja?",
-      answer:
-        "Sim — temos um serviço próprio para negócios, com recolhas fixas e faturação mensal. Consulta a nossa página para empresas.",
+      answer: BUSINESS_ANSWER,
+      link: { href: "/empresas", label: "Ver lavandaria para empresas" },
     },
   ],
 };
+
+// Todas as páginas de localidade — usado no bloco "Também estamos em".
+export const allLocations: LocationData[] = [santarem, cartaxo, azambuja, lisboaOriente];
