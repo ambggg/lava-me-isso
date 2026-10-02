@@ -97,7 +97,7 @@ export function Bags() {
                 <p className="bag__meta">
                   {sacoCasaWeight ? <>Saco de {sacoCasaWeight}</> : null}
                   {sacoCasaWeight && pricing.sacoCasa ? " · " : null}
-                  {pricing.sacoCasa ? <strong>{pricing.sacoCasa} {VAT_SHORT}</strong> : null}
+                  {pricing.sacoCasa ? <strong>desde {pricing.sacoCasa} {VAT_SHORT}</strong> : null}
                 </p>
               ) : null}
               <WhatsappCustomButton

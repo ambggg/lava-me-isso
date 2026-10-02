@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { WhatsappButton } from "./WhatsappButton";
+import { WhatsappCustomButton } from "./WhatsappCustomButton";
+import { whatsappEngomadoriaLink } from "@/lib/config";
 
 type Step = {
   title: string;
@@ -21,7 +23,7 @@ const iconProps = {
   "aria-hidden": true,
 };
 
-const steps: Step[] = [
+const defaultSteps: Step[] = [
   {
     title: "Fala connosco",
     text: "Manda mensagem no WhatsApp com a tua morada. É só isso para começar.",
@@ -55,9 +57,44 @@ const steps: Step[] = [
   },
 ];
 
+// Passos da página de engomadoria.
+const ironingSteps: Step[] = [
+  {
+    title: "Diz-nos o que é para passar",
+    text: "Manda mensagem no WhatsApp com as peças e a tua morada. Respondemos com o preço.",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20.5l1.6-5.2A8.4 8.4 0 1 1 21 11.5z" />
+        <path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01" />
+      </svg>
+    ),
+  },
+  {
+    title: "Recolhemos à tua porta",
+    text: "No dia e hora que combinarmos. Não precisas de sair de casa.",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17" />
+        <path d="M3 21h18M14.5 12h.01" />
+      </svg>
+    ),
+  },
+  {
+    title: "Devolvemos pronta a vestir",
+    text: "Camisas e vestidos em cabide, o resto dobrado. Pagas na entrega.",
+    icon: (
+      <svg {...iconProps}>
+        <path d="M12 6a2 2 0 1 1 2 2c-1 0-2 .7-2 1.6V10" />
+        <path d="M12 10 3 16.5a1 1 0 0 0 .6 1.8h16.8a1 1 0 0 0 .6-1.8L12 10z" />
+      </svg>
+    ),
+  },
+];
+
 const CYCLE_MS = 2600;
 
-export function HowItWorks() {
+export function HowItWorks({ variant = "default" }: { variant?: "default" | "ironing" }) {
+  const steps = variant === "ironing" ? ironingSteps : defaultSteps;
   const listRef = useRef<HTMLOListElement>(null);
   const [armed, setArmed] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -107,7 +144,9 @@ export function HowItWorks() {
         <h2 id="como-funciona-title" className="section__title hiw__title">
           Como funciona
         </h2>
-        <p className="hiw__subtitle">Três passos. Zero idas à lavandaria.</p>
+        <p className="hiw__subtitle">
+          {variant === "ironing" ? "Três passos. Zero tempo ao ferro." : "Três passos. Zero idas à lavandaria."}
+        </p>
 
         <ol className={listClass} ref={listRef}>
           {steps.map((step, index) => (
@@ -133,9 +172,20 @@ export function HowItWorks() {
           ))}
         </ol>
 
-        <WhatsappButton location="how-it-works" className="btn btn--primary btn--large">
-          Começar agora 🧺
-        </WhatsappButton>
+        {variant === "ironing" ? (
+          <WhatsappCustomButton
+            href={whatsappEngomadoriaLink}
+            event="cta_whatsapp_engomadoria"
+            location="how-it-works"
+            className="btn btn--primary btn--large"
+          >
+            Pedir engomadoria 🧺
+          </WhatsappCustomButton>
+        ) : (
+          <WhatsappButton location="how-it-works" className="btn btn--primary btn--large">
+            Começar agora 🧺
+          </WhatsappButton>
+        )}
       </div>
     </section>
   );

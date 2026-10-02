@@ -13,8 +13,8 @@ export const pricing = {
   launch: "15€" as PriceValue, // Oferta de lançamento (1ª lavagem, 2 sacos de 8kg)
   washDryIron: "29€" as PriceValue, // Cartão 2 — Lavar + Secar + Passar a Ferro (kit completo)
   ironOnly: "27€" as PriceValue, // Cartão 3 — Só Passar a Ferro
-  ironShirt: "3€" as PriceValue, // Página /engomadoria — camisa avulsa, com cabide incluído
-  sacoCasa: null as PriceValue, // Saco Casa — lençóis e toalhas (lavar + secar + dobrar)
+  ironShirt: "2,50€" as PriceValue, // Camisa avulsa passada a ferro — ATENÇÃO: preço COM IVA incluído, em cabide
+  sacoCasa: "15€" as PriceValue, // Saco Casa — lençóis e toalhas: DESDE este valor (+ IVA); passar a ferro conforme as peças
 };
 
 // Capacidade do Saco Casa — null esconde a linha até estar definida (ex.: "8kg").
@@ -24,6 +24,9 @@ export const sacoCasaWeight: string | null = null;
 // Clientes com recolha todos os meses não pagam IVA.
 export const VAT_NOTE = "Acresce IVA à taxa legal";
 export const VAT_SHORT = "+ IVA";
+// Exceção: o preço da camisa avulsa já inclui IVA.
+export const SHIRT_VAT_NOTE = "IVA incluído";
+
 export const MONTHLY_VAT_OFFER = "Oferecemos o IVA a clientes com recolha todos os meses.";
 
 const PLACEHOLDER = "Brevemente";

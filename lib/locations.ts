@@ -48,7 +48,7 @@ function ironingFaq(where: string): PlainFaqItem {
   return {
     question: `Também passam a ferro ${where}?`,
     answer:
-      "Sim. Com o serviço Lavar + Secar + Passar a Ferro (29€ + IVA por saco de 8kg) a roupa volta pronta a vestir. Também engomamos camisas avulsas a 3€ + IVA, com cabide incluído.",
+      "Sim. Com o serviço Lavar + Secar + Passar a Ferro (29€ + IVA por saco de 8kg) a roupa volta pronta a vestir. Também engomamos camisas avulsas a 2,50€ por peça (IVA incluído), entregues em cabide.",
     link: { href: "/engomadoria", label: "Ver o serviço de engomadoria" },
   };
 }
@@ -56,7 +56,7 @@ function ironingFaq(where: string): PlainFaqItem {
 const SHEETS_FAQ: PlainFaqItem = {
   question: "Também lavam lençóis, toalhas e edredões?",
   answer:
-    "Sim. Lençóis e toalhas vão no Saco Casa, lavado à parte da roupa do dia-a-dia. Edredões e cobertores tratamos à parte: manda-nos o tamanho no WhatsApp e dizemos-te o preço.",
+    "Sim. Lençóis e toalhas vão no Saco Casa (desde 15€ + IVA), lavado à parte da roupa do dia-a-dia. Edredões e cobertores tratamos à parte: manda-nos o tamanho no WhatsApp e dizemos-te o preço.",
   link: { href: "#sacos", label: "Conhecer o Saco Casa" },
 };
 
@@ -94,7 +94,7 @@ export const santarem: LocationData = {
       heading: "Lavar e passar a ferro em Santarém: como funciona e quanto custa",
       paragraphs: [
         "Mandas-nos mensagem no WhatsApp com a tua morada em Santarém. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
-        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com a recolha e a entrega já incluídas. Se fores cliente com recolha todos os meses, oferecemos o IVA. Para camisas, a engomadoria avulsa custa 3€ + IVA por peça, com cabide.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com a recolha e a entrega já incluídas. Se fores cliente com recolha todos os meses, oferecemos o IVA. Camisas avulsas engomadas a 2,50€ por peça, IVA incluído, entregues em cabide.",
       ],
     },
     {
@@ -167,7 +167,7 @@ export const cartaxo: LocationData = {
       heading: "Lavar e passar a ferro no Cartaxo: como funciona e quanto custa",
       paragraphs: [
         "Mandas-nos mensagem no WhatsApp com a tua morada no Cartaxo. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
-        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, já com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, já com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 2,50€ por peça, IVA incluído, entregues em cabide.",
       ],
     },
     {
@@ -240,7 +240,7 @@ export const lisboaOriente: LocationData = {
       heading: "Lavar e passar a ferro em Lisboa Oriente: como funciona e quanto custa",
       paragraphs: [
         "Mandas-nos mensagem no WhatsApp com a tua morada. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
-        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide — prontas para a semana de escritório.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 2,50€ por peça, IVA incluído, entregues em cabide — prontas para a semana de escritório.",
       ],
     },
     {
@@ -303,7 +303,7 @@ export const azambuja: LocationData = {
       heading: "Lavar e passar a ferro na Azambuja: como funciona e quanto custa",
       paragraphs: [
         "Mandas-nos mensagem no WhatsApp com a tua morada na Azambuja. Levamos-te os sacos lava-me isso. e marcamos a data da recolha. Enches o Saco Roupa com a roupa do dia-a-dia e o Saco Casa com lençóis e toalhas; nós recolhemos, tratamos de tudo e entregamos no dia combinado. Pagas na entrega, por MBWay, transferência ou numerário.",
-        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 3€ + IVA por peça, com cabide.",
+        "Um saco de 8kg custa 15€ + IVA para lavar, secar e dobrar, ou 29€ + IVA com passagem a ferro, com recolha e entrega incluídas. Clientes com recolha todos os meses não pagam IVA. Camisas avulsas engomadas a 2,50€ por peça, IVA incluído, entregues em cabide.",
       ],
     },
     {

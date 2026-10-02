@@ -57,5 +57,11 @@ export const icons = {
     </>
   ),
   check: icon(<path d="M5 12.5l4.5 4.5L19 7.5" />),
+  hanger: icon(
+    <>
+      <path d="M12 6a2 2 0 1 1 2 2c-1 0-2 .7-2 1.6V10" />
+      <path d="M12 10 3 16.5a1 1 0 0 0 .6 1.8h16.8a1 1 0 0 0 .6-1.8L12 10z" />
+    </>
+  ),
 };
 

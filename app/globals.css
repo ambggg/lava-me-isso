@@ -2470,3 +2470,222 @@ img {
 .faq-cta__btn {
   flex-shrink: 0;
 }
+
+/* ============================================
+   Engomadoria (v2)
+   ============================================ */
+.lp-hero .lp-hero__zones {
+  justify-content: flex-start;
+  max-width: none;
+  margin-top: 8px;
+}
+
+/* Contador de camisas no cartão */
+.iron-stepper {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(237, 224, 255, 0.12);
+  align-self: flex-start;
+}
+
+.iron-stepper__btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+  color: var(--violeta);
+  font-family: var(--font);
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.iron-stepper__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.iron-stepper__btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.iron-stepper__count {
+  min-width: 44px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Faixa "Nunca mais passas a ferro": mensagem + 4 cartões */
+.iron-band__grid {
+  max-width: 1080px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.iron-band__content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.iron-band__eyebrow {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--roxo-neon);
+}
+
+.iron-band__title {
+  margin: 0;
+  font-size: 2.2rem;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: var(--violeta);
+  text-wrap: balance;
+}
+
+.iron-band__lead {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  max-width: 44ch;
+}
+
+.iron-band__perks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.iron-band__perk {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 2px solid var(--lilas-suave);
+  color: var(--violeta);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.iron-band__perk:hover {
+  border-color: var(--lilas-deep);
+  transform: translateY(-2px);
+}
+
+.iron-band__perk strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.iron-band__icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--roxo-neon);
+  color: var(--neon-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .iron-band__perks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .iron-band__grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 56px;
+  }
+  .iron-band__title {
+    font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iron-band__perk {
+    transition: none;
+  }
+}
+
+/* 4 cartões de zona na engomadoria */
+@media (min-width: 768px) {
+  .lp-nearby__list--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lp-nearby__list--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+#precos-engomadoria .container {
+  max-width: 960px;
+}
+
+
+/* Cartão-resumo: lista mais forte (texto escuro, ícones roxos) */
+.lp-facts__list li {
+  color: var(--violeta);
+  opacity: 1;
+}
+
+.lp-facts__list li > span:last-child {
+  color: rgba(26, 0, 64, 0.78);
+  font-size: 0.88rem;
+}
+
+.lp-facts__list strong {
+  color: var(--violeta);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.lp-facts__icon {
+  background: var(--roxo-neon);
+  color: var(--neon-yellow);
+}
+
+/* "Pede orçamento" num cartão de preço */
+.price-card__price--quote {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.price-card__from {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--text-soft);
+  vertical-align: middle;
+  margin-right: 2px;
+}
